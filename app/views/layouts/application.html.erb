@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<% if current_technician %>
+	Logged in as <%= current_technician.full_name %>.
+	<%= link_to "Log Out", logout_path %>
+<% else %>
+  	<%= link_to "Sign Up", signup_path %> or
+  	<%= link_to "Log In", login_path %>
+<% end %>
+
+<div id="alerts" >
+	<% if flash[:notice] %>
+    	<div class="alert alert-info">
+        	<a class="close" data-dismiss="alert">×</a>
+			<stong><%= flash[:notice] %></strong>
+       </div>
+    <% end %>
+</div>
+
+
 <%= yield %>
 
 </body>

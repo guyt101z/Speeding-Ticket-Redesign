@@ -1,0 +1,36 @@
+<h2> New Technician </h2>
+
+<%= form_for @technician do |f| %>
+	<% if @technician.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@technician.errors.count, "error") %> prohibited this technician from being saved:</h2>
+			<ul>
+			<% @technician.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+		
+		<%= f.label :first_name, "First Name" %>
+		<%= f.text_field :first_name %>
+		<br>
+		<%= f.label :last_name, "Last Name" %>
+		<%= f.text_field :last_name %>
+		<br>
+		<%= f.label :email, "Email" %>
+		<%= f.text_field :email %>
+		<br>
+		<%= f.label :password, "Password" %>
+		<%= f.password_field :password %>
+		<br>
+		<%= f.label :password_confirmation, "Password Confirmation" %>
+		<%= f.password_field :password_confirmation %>
+		<br>
+		<%= f.label :avatar, "Avatar" %>
+		<%= f.file_field :avatar %>
+		<br>
+		<%= f.submit "Save Technician" %>
+<% end %>
+
+<%= link_to "back", technicians_url %>

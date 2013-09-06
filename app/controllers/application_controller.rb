@@ -1,5 +1,17 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :null_session
+
+    protect_from_forgery with: :null_session
+  
+  
+#Private Methods
+	def current_technician
+		@current_technician ||= Technician.find(session[:technician_id]) if session[:technician_id]
+	end
+	
+	helper_method :current_technician
+	
+	def authorize
+		redirect_to login_url, alert: "Not authorized" if current_technician.nil?
+	end
+	 
 end
