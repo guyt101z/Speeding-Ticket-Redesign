@@ -14,6 +14,12 @@
 			<li>Phone Number: <%= user.phone_number %></li>
 			<li>Department: <%= user.department %></li>
 			<li><%= image_tag user.avatar.url(:thumb) %></li>
+			<li>Assets:</li>
+			<ul>
+			<% user.assets.each do |asset| %>
+				<li>Tag Number: <%= asset.tag_number %></li>
+			<% end %>
+			</ul>
 			<li><%= link_to 'Show', user_path(user) %></li>
 			<li><%= link_to 'Edit', edit_user_path(user) %> </li>
 		</ul>

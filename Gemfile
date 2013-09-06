@@ -46,3 +46,7 @@ end
 
 #Upload Images with Paperclip
 gem 'paperclip'
+
+#Twitter Bootstrap v3.0.0 for Rails 4
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'

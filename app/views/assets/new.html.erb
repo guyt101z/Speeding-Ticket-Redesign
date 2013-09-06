@@ -11,7 +11,10 @@
 			</ul>
 		</div>
 	<% end %>
-		
+	
+		<%= f.label :user_id, "Asset User" %>
+		<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => 'Select a User' %>
+		<br>
 		<%= f.label :tag_number, "Asset Tag Number" %>
 		<%= f.text_field :tag_number %>
 		<br>
@@ -37,7 +40,7 @@
 		<%= f.text_field :mac_address2 %>
 		<br>
 		<%= f.label :mac_address3, "Mac Address (Wi-Fi)" %>
-		<%= f.text_field :mac_address2 %>
+		<%= f.text_field :mac_address3 %>
 		<br>
 		<%= f.label :description, "Description" %>
 		<%= f.text_field :description %>

@@ -37,7 +37,7 @@ class AssetsController < ApplicationController
 	
 private	
 	def asset_params
-		params.require(:asset).permit(:tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer, :mac_address1, :mac_address2, :mac_address3, :description, :notes, :other)
+		params.require(:asset).permit(:user_id, :tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer, :mac_address1, :mac_address2, :mac_address3, :description, :notes, :other)
     end
 	
 end
