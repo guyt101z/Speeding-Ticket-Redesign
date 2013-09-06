@@ -1,0 +1,26 @@
+<h2> All Assets </h2>
+
+<%= link_to "Add a new asset", new_asset_url %>
+
+<br><br>
+
+<% @asset_list.each do |asset| %>
+	<div class="asset">
+		<ul class="properties">
+			<li>Asset Tag Number: <%= asset.tag_number %></li>
+			<li>Asset Type: <%= asset.asset_type %></li>
+			<li>Asset Name: <%= asset.asset_name %></li>
+			<li>Model: <%= asset.model %></li>
+			<li>Serial Number: <%= asset.serial_number %></li>
+			<li>Manufacturer: <%= asset.manufacturer %></li>
+			<li>Mac Address (Ethernet 1): <%= asset.mac_address1 %></li>
+			<li>Mac Address (Ethernet 2): <%= asset.mac_address2 %></li>
+			<li>Mac Address (Wi-Fi): <%= asset.mac_address3 %></li>
+			<li>Description: <%= asset.description %></li>
+			<li>Notes: <%= asset.notes %></li>
+			<li>Other: <%= asset.other %></li>
+			<li><%= link_to 'Show', asset_path(asset) %></li>
+			<li><%= link_to 'Edit', edit_asset_path(asset) %> </li>
+		</ul>
+	</div>
+<% end %>

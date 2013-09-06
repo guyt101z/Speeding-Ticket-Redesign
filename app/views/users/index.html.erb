@@ -1,0 +1,21 @@
+<h2> All Users </h2>
+
+<%= link_to "Add a new user", new_user_url %>
+
+<br><br>
+
+<% @user_list.each do |user| %>
+	<div class="user">
+		<ul class="details">
+			<li>First Name: <%= user.first_name %></li>
+			<li>Last Name: <%= user.last_name %></li>
+			<li>Email: <%= user.email %></li>
+			<li>Location: <%= user.location %></li>
+			<li>Phone Number: <%= user.phone_number %></li>
+			<li>Department: <%= user.department %></li>
+			<li><%= image_tag user.avatar.url(:thumb) %></li>
+			<li><%= link_to 'Show', user_path(user) %></li>
+			<li><%= link_to 'Edit', edit_user_path(user) %> </li>
+		</ul>
+	</div>
+<% end %>

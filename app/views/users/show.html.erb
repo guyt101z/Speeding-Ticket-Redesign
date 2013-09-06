@@ -1,0 +1,12 @@
+	<div class="user">
+		<ul class="details">
+			<li>First Name: <%= @user.first_name %></li>
+			<li>Last Name: <%= @user.last_name %></li>
+			<li>Email: <%= @user.email %></li>
+			<li>Location: <%= @user.location %></li>
+			<li>Phone Number: <%= @user.phone_number %></li>
+			<li>Department: <%= @user.department %></li>
+			<li><%= image_tag @user.avatar.url(:thumb) %></li>
+			<li><%= link_to 'Edit', edit_user_path(@user) %></li>
+		</ul>
+	</div>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  tag_number: 1
+  asset_type: MyString
+  asset_name: MyString
+  model: MyString
+  serial_number: MyString
+  manufacturer: MyString
+  mac_address1: MyString
+  mac_address2: MyString
+  mac_address3: MyString
+  description: MyString
+  notes: MyText
+  other: MyText
+
+two:
+  user_id: 1
+  tag_number: 1
+  asset_type: MyString
+  asset_name: MyString
+  model: MyString
+  serial_number: MyString
+  manufacturer: MyString
+  mac_address1: MyString
+  mac_address2: MyString
+  mac_address3: MyString
+  description: MyString
+  notes: MyText
+  other: MyText
