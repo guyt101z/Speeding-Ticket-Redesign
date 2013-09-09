@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  asset_id: 1
+  title: MyString
+  description: MyText
+  status: MyString
+  deadline: 2013-09-09
+  priority: false
+  update: MyText
+
+two:
+  user_id: 1
+  asset_id: 1
+  title: MyString
+  description: MyText
+  status: MyString
+  deadline: 2013-09-09
+  priority: false
+  update: MyText

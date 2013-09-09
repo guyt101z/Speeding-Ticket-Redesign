@@ -2,6 +2,7 @@ class Asset < ActiveRecord::Base
 
 #Asssociations
 	belongs_to :user
+	has_many :tickets
 
 #Validation
 	validates_presence_of :tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer

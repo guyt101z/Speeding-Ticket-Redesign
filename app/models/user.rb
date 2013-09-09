@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 #Associations
-	has_many :assets
+	has_many :assets, :tickets
 
 #Validation
 	validates_presence_of :first_name, :last_name, :email, :location, :department
