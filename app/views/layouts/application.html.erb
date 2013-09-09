@@ -17,11 +17,16 @@
 <% end %>
 
 <div id="alerts" >
-	<% if flash[:notice] %>
+    <% if flash[:notice] %>
     	<div class="alert alert-info">
         	<a class="close" data-dismiss="alert">×</a>
 			<stong><%= flash[:notice] %></strong>
-       </div>
+		</div>
+    <% elsif flash[:alert] %>
+    	<div class="alert alert-warning">
+        	<a class="close" data-dismiss="alert">×</a>
+			<stong><%= flash[:alert] %></strong>
+        </div>
     <% end %>
 </div>
 

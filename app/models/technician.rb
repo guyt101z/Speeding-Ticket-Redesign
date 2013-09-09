@@ -10,10 +10,19 @@ class Technician < ActiveRecord::Base
 #Attachements
 	has_secure_password
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-    
+
+#Generate authorization token before creating user
+	before_create {generate_token(:auth_token)}
+
 #Functions
     def full_name
 		[first_name, last_name].join(' ')
+	end
+	
+	def generate_token(column)
+		begin
+			self[column] = SecureRandom.urlsafe_base64
+		end while Technician.exists?(column => self[column])
 	end
 	
 end
