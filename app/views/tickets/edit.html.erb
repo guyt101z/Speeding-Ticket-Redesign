@@ -11,7 +11,12 @@
 			</ul>
 		</div>
 	<% end %>
-	
+		<%= f.label :technician_id, "Assigned Technicians:" %><br>
+		<% hidden_field_tag "ticket[technicain_ids][]", nil %>
+		<% Technician.all.each do |technician| %>
+			<%= check_box_tag "ticket[technicain_ids][]", technician.id, @ticket.technician_ids.include?(technician.id), id: dom_id(technician) %>
+			<%= label_tag dom_id(technician), technician.full_name %><br>
+		<% end %>
 		<%= f.label :user_id, "Asset User" %>
 		<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => ' ' %>
 		<br>

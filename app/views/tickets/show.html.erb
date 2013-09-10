@@ -1,6 +1,13 @@
 	<div class="Ticket">
 		<ul class="properties">
-			<li>Assigned Technician:</li>
+			<li>Assigned Technicians:</li>
+			<ul>
+				<% @ticket.technicians.each do |technician| %>
+				<li>
+					<%= technician.full_name %>
+				</li>
+				<% end %>
+			</ul>
 			<li>User: <%= @ticket.user.full_name %></li>
 			<li>Asset Tag Number: <%= @ticket.asset.tag_number %></li>
 			<li>Title: <%= @ticket.title %></li>
@@ -18,13 +25,13 @@
 			<li>Updates:</li>
 				<ul>
 					<li>
-						Add an update
+						Add a Comment
 					</li>
 				</ul>
 				<ul>
 					<% @ticket.comments.each do |comment| %>
 					<li>
-						<%= comment.ticket.comment %>
+						<%= comment.comment %>
 					</li>
 					<% end %>
 				</ul>
