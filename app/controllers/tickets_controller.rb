@@ -49,6 +49,3 @@ private
     end
 	
 end
-
-
-end

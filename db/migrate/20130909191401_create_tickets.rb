@@ -8,7 +8,6 @@ class CreateTickets < ActiveRecord::Migration
       t.string :status
       t.date :deadline
       t.boolean :priority
-      t.text :update
 
       t.timestamps
     end

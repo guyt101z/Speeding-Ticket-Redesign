@@ -1,0 +1,33 @@
+	<div class="Ticket">
+		<ul class="properties">
+			<li>Assigned Technician:</li>
+			<li>User: <%= @ticket.user.full_name %></li>
+			<li>Asset Tag Number: <%= @ticket.asset.tag_number %></li>
+			<li>Title: <%= @ticket.title %></li>
+			<li>Description: <%= @ticket.description %></li>
+			<li>Status: <%= @ticket.status %></li>
+			<li>Deadline: <%= @ticket.deadline %></li>
+			<li>
+				Priority?: 
+				<% if @ticket.priority == true %>
+					Yes
+				<% else %>
+					No
+				<% end %>
+			</li>
+			<li>Updates:</li>
+				<ul>
+					<li>
+						Add an update
+					</li>
+				</ul>
+				<ul>
+					<% @ticket.comments.each do |comment| %>
+					<li>
+						<%= comment.ticket.comment %>
+					</li>
+					<% end %>
+				</ul>
+			<li><%= link_to 'Edit', edit_ticket_path(@ticket) %></li>
+		</ul>
+	</div>

@@ -1,6 +1,9 @@
 class Technician < ActiveRecord::Base
+
 #Associations
-	has_and_belongs_to_many :tickets
+	has_many :comments
+	has_many :assignments
+	has_many :tickets, :through => :assignments
 
 #Validation
 	validates_presence_of :first_name, :last_name, :email

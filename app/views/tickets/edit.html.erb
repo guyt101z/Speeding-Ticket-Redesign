@@ -1,0 +1,39 @@
+<h2> New Ticket </h2>
+
+<%= form_for @ticket do |f| %>
+	<% if @ticket.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+			<ul>
+			<% @ticket.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+		<%= f.label :user_id, "Asset User" %>
+		<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => ' ' %>
+		<br>
+		<%= f.label :asset_id, "Asset Tag Number" %>
+		<%= f.collection_select :asset_id, Asset.all, :id, :tag_number, :include_blank => ' ' %>
+		<br>
+		<%= f.label :title, "Job Title" %>
+		<%= f.text_field :title %>
+		<br>
+		<%= f.label :description, "Job Description" %>
+		<%= f.text_area :description %>
+		<br>
+		<%= f.label :status, "Job Status" %>
+		<%= f.text_field :status %>
+		<br>
+		<%= f.label :deadline, "Deadline" %>
+		<%= f.date_select :deadline %>
+		<br>
+		<%= f.label :priority, "Priority?" %>
+		<%= f.check_box :priority %>
+		<br>
+		<%= f.submit "Save Ticket" %>
+<% end %>
+
+<%= link_to "back", assets_url %>
