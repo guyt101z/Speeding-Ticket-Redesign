@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -48,5 +48,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'paperclip'
 
 #Twitter Bootstrap v3.0.0 for Rails 4
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+
+#Validate Emails
+gem 'email_validator'

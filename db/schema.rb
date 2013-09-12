@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20130910194604) do
     t.datetime "updated_at"
   end
 
-  create_table "comments", force: true do |t|
-    t.integer  "ticket_id"
-    t.integer  "technician_id"
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "technicians", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
