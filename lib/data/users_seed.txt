@@ -147,3 +147,19 @@ Kusch|Brian|CAS	141|353-7253|kusch@msu.edu|DEAN
 Landry|Stacy|CAS 285|884-4978|landrys1@msu.edu|DEAN
 Lapinski|Maria|CAS 297|355-9569|lapinsk3@msu.edu|DEAN
 Silk|Kami|CAS 293|884-3550|silkk@msu.edu|DEAN
+Casby|Mike|OYER 105|432-8201|casby@msu.edu|CSD
+Cooke|Paul|OYER 102|353-8788|cooke@msu.edu|CSD
+Dilley|Laura|OYER 116|884-2255|ldilley@msu.edu|CSD
+Hunter|Eric|OYER 113|884-6778|ejhunter@msu.edu|CSD
+LaPine|Peter|OYER 103|432-7044|lapine@msu.edu|CSD
+Rakerd|Brad|OYER 219|432-8195|rakerd@msu.edu|CSD
+Shrivastav|Mini|OYER 217|353-7837|mnshriv@msu.edu|CSD
+Shrivastav|Rahul|OYER 115|884-2258|rahul@msu.edu|CSD
+Skowronski|Mark|OYER 216|884-2259|markskow@msu.edu|CSD
+Strong|Katie|OYER 215|884-2323|strongk@msu.edu|CSD
+Morrill Adams|Tuuli|OYER B-9|432-7042|tmorrill@msu.edu|CSD
+Stockman|Ida|OYER 203|353-6764|stockma1@msu.edu|CSD
+Eulenberg|John|OYER B-8|353-5399|eulenber@msu.edu|CSD
+Punch|Jerry|OYER 204|353-8656|jpunch@msu.edu|CSD
+Gascon|Scott|OYER 109|353-9206|gasconsc@msu.edu|CSD
+Hicks|Kristen|OYER 117|884-2257|hickskr@msu.edu|CSD
