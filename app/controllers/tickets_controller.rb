@@ -45,7 +45,7 @@ class TicketsController < ApplicationController
 #Private Actions	
 private	
 	def ticket_params
-		params.require(:ticket).permit(:user_id, :asset_id, :title, :description, :status, :deadline, :priority)
+		params.require(:ticket).permit(:user_id, :asset_id, :title, :description, :status, :deadline, :priority, :technician_ids, {:technician_ids => []})
     end
 	
 end
