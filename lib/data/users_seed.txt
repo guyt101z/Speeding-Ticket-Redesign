@@ -163,3 +163,35 @@ Eulenberg|John|OYER B-8|353-5399|eulenber@msu.edu|CSD
 Punch|Jerry|OYER 204|353-8656|jpunch@msu.edu|CSD
 Gascon|Scott|OYER 109|353-9206|gasconsc@msu.edu|CSD
 Hicks|Kristen|OYER 117|884-2257|hickskr@msu.edu|CSD
+Anderson|Margie|CAS 305-A|353-6430|ander186@msu.edu|JRN
+Ashley|Nancy|CAS 340|432-1526|ashleyn@msu.edu|JRN
+Beer|Ken|CAS 304|353-6431|beerk@msu.edu|JRN
+Miller|Barb|CAS 382|432-1415|mille384@msu.edu|JRN
+Bossen|Howard|CAS 357/279|353-4613|bossen@msu.edu|JRN
+Bucqueroux|Bonnie|CAS|349-4752|sustainablefarmer@gmail.com|JRN
+Carpenter|Serena|CAS 344|432-9245|carp@msu.edu|JRN
+Carter|Sue|CAS 366|432-7461|sucarter@msu.edu|JRN
+Chavez|Manuel|CAS 385|432-1411|chavezm1@msu.edu|JRN
+Davenport|Lucinda|CAS 305-B|355-1520|ludavenp@msu.edu|JRN
+Dickerson|Lori Anne|CAS 343|353-5110|dicker22@msu.edu|JRN
+Fico|Fred|CAS 386|355-4489|fredfico@msu.edu|JRN
+Freedman|Eric|CAS 345|355-4729|freedma5@msu.edu|JRN
+Gould|Bob|CAS 355|353-6405|gouldro@msu.edu|JRN
+Greene|Darcy|CAS 356/265|353-7151|greened@msu.edu|JRN
+Grimm|Joe|CAS 303|353-5425|joe.grimm@gmail.com|JRN
+Gude|Karl|CAS 271|432-2485|gudek@msu.edu|JRN
+Hale|Troy|CAS 277|432-5128|halet@msu.edu|JRN
+Lacy|Steve|CAS 346|355-4625|slacy@msu.edu|JRN
+Molloy|John|CAS 376|381-8637|molloy@msu.edu|JRN
+Ogundimu|Folu|CAS 384|353-6459|ogundimu@msu.edu|JRN
+Pell|Cheryl|CAS 302|884-4487|pell@msu.edu|JRN
+Poulson|Dave|CAS 383|432-5417|poulson@msu.edu|JRN
+Stamm|Michael|History 315|884-4944|stamm@msu.edu|JRN
+Steele|Jeremy|CAS 338|353-6761|jws@mipamsu.org|JRN
+Takahashi|Bruno|CAS 348|432-2454|btakahas@msu.edu|JRN
+Ware|Jen|CAS 301|754-748-9964|warejen3@msu.edu|JRN
+Zakharia-Minassian|Maral|CAS 269|884-6668|mzakhari@msu.edu|JRN
+Zeldes|Geri|CAS 280|910-0687|alumitge@msu.edu|JRN
+Friess|Steve|CAS 358|-|sfriess@msu.edu|JRN
+Schimpf|Sheila|CAS 238|-|schimpf@msu.edu|JRN
+Sofradzija|Omar|The State News|-|omars@msu.edu|JRN

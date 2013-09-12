@@ -1,8 +1,6 @@
 <h2> Dashboard </h2>
 
-<%= link_to "Add a new technician", new_technicians_url %>
-
-<br><br>
+<br>
 
 <% @current_technician.tickets.each do |ticket| %>
 	<div class="Ticket">
@@ -40,7 +38,7 @@
 						Comments Here
 					</li>
 				</ul>
-			<li><%= link_to 'Edit', edit_ticket_path(ticket) %></li>
+			<li><%= link_to 'Show', ticket_path(ticket) %></li>
 		</ul>
 	</div>
 <% end %>
