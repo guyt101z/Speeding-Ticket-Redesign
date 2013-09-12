@@ -29,11 +29,9 @@
 					</li>
 				</ul>
 				<ul>
-					<% @ticket.comments.each do |comment| %>
 					<li>
-						<%= comment.comment %>
+						Comments Here
 					</li>
-					<% end %>
 				</ul>
 			<li><%= link_to 'Edit', edit_ticket_path(@ticket) %></li>
 		</ul>

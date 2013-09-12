@@ -4,7 +4,7 @@
 
 <br><br>
 
-<% @user_list.each do |user| %>
+<% @user_list.order('last_name ASC').each do |user| %>
 	<div class="user">
 		<ul class="details">
 			<li>First Name: <%= user.first_name %></li>

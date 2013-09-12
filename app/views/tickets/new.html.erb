@@ -18,7 +18,7 @@
 			<%= label_tag dom_id(technician), technician.full_name %><br>
 		<% end %>
 		<%= f.label :user_id, "Asset User" %>
-		<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => ' ' %>
+		<%= f.collection_select :user_id, User.order('last_name ASC').all, :id, :full_name, :include_blank => ' ' %>
 		<br>
 		<%= f.label :asset_id, "Asset Tag Number" %>
 		<%= f.collection_select :asset_id, Asset.all, :id, :tag_number, :include_blank => ' ' %>
