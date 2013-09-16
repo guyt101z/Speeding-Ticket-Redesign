@@ -13,7 +13,6 @@ Miller|Vernon|CAS 564|355-3280|vmiller@msu.edu|COMM
 Morrison|Kelly|CAS 469|432-0203|morris15@msu.edu|COMM
 Sherry|John|CAS 551|355-6648|jsherry@msu.edu|COMM
 Smith|Sandi|CAS 573-A|353-3715|smiths@msu.edu|COMM
-Takahashi|Bruno|CAS 348|432-2454|btakahas@msu.edu|COMM
 Tamborini|Ron|CAS 570|355-0178|tamborin@msu.edu|COMM
 Walther|Joe|CAS 562|432-1132|jwalther@msu.edu|COMM
 Wittenbaum|Gwen|CAS 559|353-8120|gwenwittenb@msu.edu|COMM
@@ -27,7 +26,6 @@ Cotten|Shelia|CAS 404|432-8002|cotten@msu.edu|TISM
 Coursaris|Constantinos|CAS 424|353-3122|coursari@msu.edu|TISM
 Dennis|Andrew|CAS 427|884-6695|adennis@msu.edu|TISM
 Dobbins|Alison|Auditorium 239|355-3351|dobbinsa@msu.edu|TISM
-Hale|Troy|CAS 277|432-5128|halet@msu.edu|TISM
 Hales|Kayla|CAS 419|355-6558|haleskay@msu.edu|TISM
 Holtz|Bree|CAS 541|553-6378|bholtz@msu.edu|TISM
 Huh|Jina|CAS 418|432-3378|jinahuh@msu.edu|TISM
@@ -192,6 +190,36 @@ Takahashi|Bruno|CAS 348|432-2454|btakahas@msu.edu|JRN
 Ware|Jen|CAS 301|754-748-9964|warejen3@msu.edu|JRN
 Zakharia-Minassian|Maral|CAS 269|884-6668|mzakhari@msu.edu|JRN
 Zeldes|Geri|CAS 280|910-0687|alumitge@msu.edu|JRN
-Friess|Steve|CAS 358|-|sfriess@msu.edu|JRN
-Schimpf|Sheila|CAS 238|-|schimpf@msu.edu|JRN
-Sofradzija|Omar|The State News|-|omars@msu.edu|JRN
+Friess|Steve|CAS 358|------|sfriess@msu.edu|JRN
+Schimpf|Sheila|CAS 238|------|schimpf@msu.edu|JRN
+Sofradzija|Omar|The State News|------|omars@msu.edu|JRN
+Alhabash|Saleem|CAS 313|432-2178|SA@msu.edu|ADPR
+Besley|John|CAS 378|884-4411|jbesley@msu.edu|ADPR
+Brimmer|Henry|CAS 267|355-2314|hbrimmer@msu.edu|ADPR
+Bukovac-Phelps|Janice|CAS 325|355-6576|bukovac@msu.edu|ADPR
+Cole|Richard|CAS 372|355-5966|rcole1@msu.edu|ADPR
+Corner|Andrew|CAS 330|355-5084|cornera@msu.edu|ADPR
+Davis|Graham|CAS 309|355-2314|davisgra@msu.edu|ADPR
+Gnass|Camron|CAS 309|355-2314|gnass@msu.edu|ADPR
+Good|Linda|CAS 373|355-1282|goodl@msu.edu|ADPR
+Grigg Gerdes|Linda|CAS 309|355-2314|linda@griggmedia.com|ADPR
+Huddleston|Patricia|CAS 370|353-9907|huddles2@msu.edu|ADPR
+Johnson|Ross|CAS 309|355-2314|john3595@msu.edu|ADPR
+Kolt|Robert|CAS 309|706-0001|kolt@msu.edu|ADPR
+Kononova|Anastasia|CAS 319|355-3858|kononova@msu.edu|ADPR
+Kronrod|Ann|CAS 324|432-8377|kronrod@msu.edu|ADPR
+Li|Hairong|CAS 368|355-1739|hairong@msu.edu|ADPR
+Lorenc|Michal|CAS 309|355-2314|michal.lorenc@gmail.com|ADPR
+McAlister|Anna|CAS 327|355-6666|annamc@msu.edu|ADPR
+Mehraban|Derek|CAS 309|355-2314|mehraban@msu.edu|ADPR
+Pysarchik|Dawn|CAS 374|353-0650|pysarchi@msu.edu|ADPR
+Quilliam|Elizabeth|CAS 317|432-7076|quilliam@msu.edu|ADPR
+Regan|David|CAS 318|353-8606|regand@msu.edu|ADPR
+Richards|Jef|CAS 309|355-2314|jef@msu.edu|ADPR
+Rifon|Nora|CAS 316|355-3295|rifon@msu.edu|ADPR
+Siarto (Osmar)|Ali|CAS 309|355-2314|osmarall@msu.edu|ADPR
+Steinberg|Lawrence|CAS 326|353-6460|steinb35@msu.edu|ADPR
+Storrer|Paula|CAS 331|353-5465|pstuart@msu.edu|ADPR
+Tiedgen|Matt|CAS 309|355-2314|mtiedgen@leadmarketingagency.com|ADPR
+Wald|Joseph|CAS 329|353-9064|waldj@msu.edu|ADPR
+Wilson|Kyle|CAS	332|355-2314|wilso864@msu.edu|ADPR
