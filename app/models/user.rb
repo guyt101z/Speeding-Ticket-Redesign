@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	has_many :assets 
 	has_many :tickets
 	has_many :comments, as: :commentable
-#	has_many :orders
+	has_many :purchases
 
 #Validation
 	validates_presence_of :first_name, :last_name, :email, :location, :department

@@ -1,7 +1,7 @@
 class Software < ActiveRecord::Base
 
 #Asssociations
-	has_many :orders
+	has_many :purchases
 	has_many :installations
 	has_many :assets, :through => :installations
 

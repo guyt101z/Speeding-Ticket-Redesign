@@ -1,6 +1,6 @@
 SpeedingTicketNew::Application.routes.draw do
 
-  resources :softwares
+  resources :purchases
 
 	root to: 'tickets#index'
 	
@@ -19,5 +19,7 @@ SpeedingTicketNew::Application.routes.draw do
   	resources :tickets do
   		resources :comments
   	end
+  	resources :purchases
+  	resources :softwares
 
 end

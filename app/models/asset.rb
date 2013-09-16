@@ -6,7 +6,7 @@ class Asset < ActiveRecord::Base
 	has_many :comments, as: :commentable
 	has_many :installations
 	has_many :softwares, :through => :installations
-#	has_many :orders
+	has_many :purchases
 
 #Validation
 	validates_presence_of :tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer

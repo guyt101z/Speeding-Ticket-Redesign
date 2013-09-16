@@ -18,6 +18,15 @@
 	</div>
 	
 	
+	----------
+	<li>Purchases:</li>
+			<ul>
+			<% @user.purchases.each do |purchase| %>
+				<li>Purchase: <%= purchase.id %></li>
+			<% end %>
+			</ul>
+	
+	
 	<h2>Comments</h2>
 	<%= render "comments/form" %>
 	<%= render "comments/comments" %>

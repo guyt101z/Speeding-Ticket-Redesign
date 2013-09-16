@@ -1,0 +1,44 @@
+<h2> New Order </h2>
+
+<%= form_for @purchase do |f| %>
+	<% if @purchase.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this order from being saved:</h2>
+			<ul>
+			<% @purchase.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+		<%= f.label :asset_id, "Asset" %>
+		<%= f.collection_select :asset_id, Asset.order('tag_number ASC').all, :id, :tag_number, :include_blank => ' ' %>
+		<br>
+		<%= f.label :software_id, "Software Title" %>
+		<%= f.collection_select :software_id, Software.order('title ASC').all, :id, :title, :include_blank => ' ' %>
+		<br>
+		<%= f.label :user_id, "User" %>
+		<%= f.collection_select :user_id, User.order('last_name ASC').all, :id, :full_name, :include_blank => ' '  %>
+		<br>
+		<%= f.label :item_name, "Item Name" %>
+		<%= f.text_field :item_name %>
+		<br>
+		<%= f.label :part_number, "Part Number" %>
+		<%= f.text_field :part_number %>
+		<br>
+		<%= f.label :account_number, "Account Number" %>
+		<%= f.text_field :account_number %>
+		<br>
+		<%= f.label :grant_account, "Grant Account" %>
+		<%= f.text_field :grant_account %>
+		<br>
+		<%= f.label :quantity, "Quantity" %>
+		<%= f.text_field :quantity %>
+		<br>
+		<%= f.label :status, "Order Status" %>
+		<%= f.text_field :status %>
+		<br>
+		<%= f.submit "Save Order" %>
+<% end %>
+
+<%= link_to "back", purchases_url %>

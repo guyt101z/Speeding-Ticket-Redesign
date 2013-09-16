@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916171900) do
+ActiveRecord::Schema.define(version: 20130916191627) do
 
   create_table "assets", force: true do |t|
     t.integer  "user_id"
@@ -52,6 +52,24 @@ ActiveRecord::Schema.define(version: 20130916171900) do
   create_table "installations", force: true do |t|
     t.integer  "asset_id"
     t.integer  "software_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchases", force: true do |t|
+    t.integer  "asset_id"
+    t.integer  "software_id"
+    t.integer  "user_id"
+    t.string   "item_name"
+    t.string   "part_number"
+    t.string   "account_number"
+    t.string   "grant_account"
+    t.integer  "quantity"
+    t.string   "status"
+    t.string   "invoice_file_name"
+    t.string   "invoice_content_type"
+    t.integer  "invoice_file_size"
+    t.datetime "invoice_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

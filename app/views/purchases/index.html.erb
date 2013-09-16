@@ -1,0 +1,23 @@
+<h2> All Purchases </h2>
+
+<%= link_to "Add a new purchase", new_purchase_url %>
+
+<br><br>
+
+<% @purchase_list.each do |purchase| %>
+	<div class="purchase">
+		<ul class="details">
+			<li>Asset: <%= purchase.asset.tag_number %></li>
+			<li>Software: <%= purchase.software.title %></li>
+			<li>User: <%= purchase.user.full_name %></li>
+			<li>Item Name: <%= purchase.item_name %></li>
+			<li>Part Number: <%= purchase.part_number %></li>
+			<li>Account Number: <%= purchase.account_number %></li>
+			<li>Grant Account: <%= purchase.grant_account %></li>
+			<li>Quantity: <%= purchase.quantity %></li>
+			<li>Status: <%= purchase.status %></li>
+			<li><%= link_to 'Show', purchase_path(purchase) %></li>
+			<li><%= link_to 'Edit', edit_purchase_path(purchase) %></li>
+		</ul>
+	</div>
+<% end %>
