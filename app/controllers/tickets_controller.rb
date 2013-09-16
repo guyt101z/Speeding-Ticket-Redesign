@@ -20,6 +20,9 @@ class TicketsController < ApplicationController
 #Show Action	
 	def show
     	@ticket = Ticket.find(params[:id])
+    	@commentable = @ticket
+    	@comments = @commentable.comments
+    	@comment = Comment.new
 	end
 
 #Edit Action	

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 #Associations
 	has_many :assets 
 	has_many :tickets
+	has_many :comments, as: :commentable
 #	has_many :orders
 
 #Validation

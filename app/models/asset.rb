@@ -3,6 +3,7 @@ class Asset < ActiveRecord::Base
 #Asssociations
 	belongs_to :user
 	has_many :tickets
+	has_many :comments, as: :commentable
 #	has_many :softwares
 #	has_many :orders
 

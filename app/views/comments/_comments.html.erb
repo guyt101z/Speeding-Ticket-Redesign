@@ -1,0 +1,8 @@
+<div id="comments">
+<% @comments.each do |comment| %>
+	<div class="comment">
+		<%= comment.technician.full_name %> - <%= comment.created_at %>
+		<%= simple_format comment.content %>
+	</div>
+<% end %>
+</div>

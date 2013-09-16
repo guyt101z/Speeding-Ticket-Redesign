@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910194604) do
+ActiveRecord::Schema.define(version: 20130916133645) do
 
   create_table "assets", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20130910194604) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comments", force: true do |t|
+    t.integer  "technician_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
 
   create_table "technicians", force: true do |t|
     t.string   "first_name"

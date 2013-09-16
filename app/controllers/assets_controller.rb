@@ -20,6 +20,9 @@ class AssetsController < ApplicationController
 #Show Action	
 	def show
     	@asset = Asset.find(params[:id])
+    	@commentable = @asset
+    	@comments = @commentable.comments
+    	@comment = Comment.new
 	end
 
 #Edit Action	
