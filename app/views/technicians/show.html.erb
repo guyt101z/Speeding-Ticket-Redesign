@@ -1,0 +1,10 @@
+	<div class="Technician">
+		<ul class="properties">
+			<li>Name: <%= @technician.full_name %></li>
+			<li>Email: <%= @technician.email %></li>
+			<li><%= image_tag @technician.avatar.url(:thumb) %></li>
+			<li><%= link_to 'Edit', edit_technician_path(@technician) %></li>
+		</ul>
+	</div>
+	
+	<%= link_to 'Back', root_url %>

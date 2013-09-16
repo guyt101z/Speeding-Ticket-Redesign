@@ -1,1 +1,17 @@
-All Technicians List Here
+<h2> All Technicians </h2>
+
+<%= link_to "Add a new tech", new_technician_url %>
+
+<br><br>
+
+<% @technician_list.order('last_name ASC').each do |technician| %>
+	<div class="Technician">
+		<ul class="properties">
+			<li>Name: <%= technician.full_name %></li>
+			<li>Email: <%= technician.email %></li>
+			<li><%= image_tag technician.avatar.url(:thumb) %></li>
+			<li><%= link_to 'Show', technician_path(technician) %></li>
+			<li><%= link_to 'Edit', edit_technician_path(technician) %></li>
+		</ul>
+	</div>
+<% end %>
