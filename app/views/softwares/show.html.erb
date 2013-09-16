@@ -1,0 +1,10 @@
+	<div class="software">
+		<ul class="details">
+			<li>Title: <%= @software.title %></li>
+			<li>Version Number: <%= @software.version_number %></li>
+			<li>Manufacturer: <%= @software.manufacturer %></li>
+			<li>License Type: <%= @software.license_type %></li>
+			<li>License Number: <%= @software.license_number %></li>
+			<li><%= link_to 'Edit', edit_software_path(@software) %></li>
+		</ul>
+	</div>

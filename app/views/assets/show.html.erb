@@ -17,6 +17,17 @@
 		</ul>
 	</div>
 	
+	-----
+	
+	Software:
+		<ul>
+		<% @asset.softwares.each do |software| %>
+			<li>
+				<%= software.title %> v<%= software.version_number %>
+			</li>
+			<% end %>
+		</ul>
+	
 	<h2>Comments</h2>
 	<%= render "comments/form" %>
 	<%= render "comments/comments" %>

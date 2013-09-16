@@ -4,7 +4,8 @@ class Asset < ActiveRecord::Base
 	belongs_to :user
 	has_many :tickets
 	has_many :comments, as: :commentable
-#	has_many :softwares
+	has_many :installations
+	has_many :softwares, :through => :installations
 #	has_many :orders
 
 #Validation

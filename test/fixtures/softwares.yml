@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  asset_id: 1
+  title: MyString
+  version_number: MyString
+  manufacturer: MyString
+  licence_type: MyString
+  licence_number: MyText
+
+two:
+  asset_id: 1
+  title: MyString
+  version_number: MyString
+  manufacturer: MyString
+  licence_type: MyString
+  licence_number: MyText

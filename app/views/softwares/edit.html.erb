@@ -1,0 +1,32 @@
+<h2> New Software Title </h2>
+
+<%= form_for @software do |f| %>
+	<% if @software.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@software.errors.count, "error") %> prohibited this software title from being saved:</h2>
+			<ul>
+			<% @software.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+		<%= f.label :title, "Software Title" %>
+		<%= f.text_field :title %>
+		<br>
+		<%= f.label :version_number, "Software Version" %>
+		<%= f.text_field :version_number %>
+		<br>
+		<%= f.label :manufacturer, "Manufacturer" %>
+		<%= f.text_field :manufacturer %>
+		<br>
+		<%= f.label :license_type, "License Type" %>
+		<%= f.text_field :license_type %>
+		<br>
+		<%= f.label :license_number, "License Number" %>
+		<%= f.text_field :license_number %>
+		<br>
+		<%= f.submit "Save Software Title" %>
+<% end %>
+
+<%= link_to "back", softwares_url %>

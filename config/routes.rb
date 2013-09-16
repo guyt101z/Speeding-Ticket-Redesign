@@ -1,5 +1,7 @@
 SpeedingTicketNew::Application.routes.draw do
 
+  resources :softwares
+
 	root to: 'tickets#index'
 	
 	get 'signup', to: 'technicians#new', as: 'signup'

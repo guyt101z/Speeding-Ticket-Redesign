@@ -51,6 +51,12 @@
 		<%= f.label :other, "Other" %>
 		<%= f.text_field :other %>
 		<br>
+		<%= f.label :sofware_id, "Installed Software" %><br>
+		<%= hidden_field_tag "asset[software_ids][]", nil%>
+		<% Software.all.each do |software| %>
+			<%= check_box_tag "asset[software_ids][]", software.id, @asset.software_ids.include?(software.id), id: dom_id(software) %>
+			<%= label_tag dom_id(software), software.title %> <%= label_tag dom_id(software), software.version_number %><br/>
+		<% end %>
 		<%= f.submit "Save Asset" %>
 <% end %>
 
