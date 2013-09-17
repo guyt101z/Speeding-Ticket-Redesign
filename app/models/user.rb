@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
 #Associations
 	has_many :assets 
 	has_many :tickets
-	has_many :comments, as: :commentable
 	has_many :purchases
+	has_many :comments, as: :commentable
 
 #Validation
 	validates_presence_of :first_name, :last_name, :email, :location, :department

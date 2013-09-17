@@ -1,0 +1,4 @@
+Mills|Sam|millssa4@msu.edu|waters|waters
+Andrews|Jared|andre190@msu.edu|waters|waters
+Ramirez|Juan|ramire25@msu.edu|waters|waters
+Kusch|Brian|kusch@msu.edu|waters|waters

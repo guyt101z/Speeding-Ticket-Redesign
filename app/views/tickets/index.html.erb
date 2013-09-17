@@ -13,8 +13,14 @@
 				</li>
 				<% end %>
 			</ul>
+			<ul>
+				<% ticket.assets.each do |asset| %>
+				<li>
+					<%= asset.tag_number %>
+				</li>
+				<% end %>
+			</ul>
 			<li>User: <%= ticket.user.full_name %></li>
-			<li>Asset Tag Number: <%= ticket.asset.tag_number %></li>
 			<li>Title: <%= ticket.title %></li>
 			<li>Description: <%= ticket.description %></li>
 			<li>Status: <%= ticket.status %></li>
@@ -27,17 +33,6 @@
 					No
 				<% end %>
 			</li>
-			<li>Updates:</li>
-				<ul>
-					<li>
-						Add a Comment
-					</li>
-				</ul>
-				<ul>
-					<li>
-						Comments Here
-					</li>
-				</ul>
 			<li><%= link_to 'Show', ticket_path(ticket) %></li>
 		</ul>
 	</div>

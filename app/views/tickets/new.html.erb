@@ -17,11 +17,14 @@
 			<%= check_box_tag "ticket[technician_ids][]", technician.id, @ticket.technician_ids.include?(technician.id), id: dom_id(technician) %>
 			<%= label_tag dom_id(technician), technician.full_name %><br/>
 		<% end %>
+		<%= f.label :asset_id, "Asset(s)" %><br>
+		<%= hidden_field_tag "ticket[asset_ids][]", nil%>
+		<% Asset.all.each do |asset| %>
+			<%= check_box_tag "ticket[asset_ids][]", asset.id, @ticket.asset_ids.include?(asset.id), id: dom_id(asset) %>
+			<%= label_tag dom_id(asset), asset.tag_number %><br/>
+		<% end %>
 		<%= f.label :user_id, "Asset User" %>
 		<%= f.collection_select :user_id, User.order('last_name ASC').all, :id, :full_name, :include_blank => ' ' %>
-		<br>
-		<%= f.label :asset_id, "Asset Tag Number" %>
-		<%= f.collection_select :asset_id, Asset.all, :id, :tag_number, :include_blank => ' ' %>
 		<br>
 		<%= f.label :title, "Job Title" %>
 		<%= f.text_field :title %>

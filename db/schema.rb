@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916191627) do
+ActiveRecord::Schema.define(version: 20130917204624) do
 
   create_table "assets", force: true do |t|
     t.integer  "user_id"
+    t.string   "location"
     t.integer  "tag_number"
     t.string   "asset_type"
     t.string   "asset_name"
@@ -33,6 +34,13 @@ ActiveRecord::Schema.define(version: 20130916191627) do
 
   create_table "assignments", force: true do |t|
     t.integer  "technician_id"
+    t.integer  "ticket_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attachemnts", force: true do |t|
+    t.integer  "asset_id"
     t.integer  "ticket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -75,7 +83,6 @@ ActiveRecord::Schema.define(version: 20130916191627) do
   end
 
   create_table "softwares", force: true do |t|
-    t.integer  "asset_id"
     t.string   "title"
     t.string   "version_number"
     t.string   "manufacturer"
@@ -101,7 +108,6 @@ ActiveRecord::Schema.define(version: 20130916191627) do
 
   create_table "tickets", force: true do |t|
     t.integer  "user_id"
-    t.integer  "asset_id"
     t.string   "title"
     t.text     "description"
     t.string   "status"
