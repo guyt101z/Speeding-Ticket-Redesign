@@ -32,3 +32,219 @@
 	<h2>Comments</h2>
 	<%= render "comments/form" %>
 	<%= render "comments/comments" %>
+	
+		<% unless @asset.versions[-1].nil? or @asset.versions[-1].object.nil? %>
+		Asset Modified by <%= @asset.versions[-1].whodunnit %> on <%= @asset.versions[-1].created_at %>
+		<ul>
+			<% unless @asset.versions[-1].reify.location == @asset.location %>
+				<li>Asset relocated from <%= @asset.versions[-1].reify.location %> to <%= @asset.location %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.user.full_name == @asset.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-1].reify.user.full_name %> to <%= @asset.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.asset_name == @asset.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-1].reify.asset_name %> to <%= @asset.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.serial_number == @asset.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-1].reify.serial_number %> to <%= @asset.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.mac_address1 == @asset.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-1].reify.mac_address1 %> to <%= @asset.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.mac_address2 == @asset.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-1].reify.mac_address2 %> to <%= @asset.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-1].reify.mac_address3 == @asset.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-1].reify.mac_address3 %> to <%= @asset.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-2].nil? or @asset.versions[-2].object.nil? %>
+		Asset Modified by <%= @asset.versions[-2].whodunnit %> on <%= @asset.versions[-2].created_at %>
+		<ul>
+			<% unless @asset.versions[-2].reify.location == @asset.versions[-1].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-2].reify.location %> to <%= @asset.versions[-1].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.user.full_name == @asset.versions[-1].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-2].reify.user.full_name %> to <%= @asset.versions[-1].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.asset_name == @asset.versions[-1].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-2].reify.asset_name %> to <%= @asset.versions[-1].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.serial_number == @asset.versions[-1].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-2].reify.serial_number %> to <%= @asset.versions[-1].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.mac_address1 == @asset.versions[-1].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-2].reify.mac_address1 %> to <%= @asset.versions[-1].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.mac_address2 == @asset.versions[-1].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-2].reify.mac_address2 %> to <%= @asset.versions[-1].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-2].reify.mac_address3 == @asset.versions[-1].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-2].reify.mac_address3 %> to <%= @asset.versions[-1].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-3].nil? or @asset.versions[-3].object.nil? %>
+		Asset Modified by <%= @asset.versions[-3].whodunnit %> on <%= @asset.versions[-3].created_at %>
+		<ul>
+			<% unless @asset.versions[-3].reify.location == @asset.versions[-2].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-3].reify.location %> to <%= @asset.versions[-2].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.user.full_name == @asset.versions[-2].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-3].reify.user.full_name %> to <%= @asset.versions[-2].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.asset_name == @asset.versions[-2].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-3].reify.asset_name %> to <%= @asset.versions[-2].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.serial_number == @asset.versions[-2].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-3].reify.serial_number %> to <%= @asset.versions[-2].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.mac_address1 == @asset.versions[-2].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-3].reify.mac_address1 %> to <%= @asset.versions[-2].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.mac_address2 == @asset.versions[-2].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-3].reify.mac_address2 %> to <%= @asset.versions[-2].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-3].reify.mac_address3 == @asset.versions[-2].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-3].reify.mac_address3 %> to <%= @asset.versions[-2].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-4].nil? or @asset.versions[-4].object.nil? %>
+		Asset Modified by <%= @asset.versions[-4].whodunnit %> on <%= @asset.versions[-4].created_at %>
+		<ul>
+			<% unless @asset.versions[-4].reify.location == @asset.versions[-3].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-4].reify.location %> to <%= @asset.versions[-3].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.user.full_name == @asset.versions[-3].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-4].reify.user.full_name %> to <%= @asset.versions[-3].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.asset_name == @asset.versions[-3].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-4].reify.asset_name %> to <%= @asset.versions[-3].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.serial_number == @asset.versions[-3].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-4].reify.serial_number %> to <%= @asset.versions[-3].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.mac_address1 == @asset.versions[-3].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-4].reify.mac_address1 %> to <%= @asset.versions[-3].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.mac_address2 == @asset.versions[-3].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-4].reify.mac_address2 %> to <%= @asset.versions[-3].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-4].reify.mac_address3 == @asset.versions[-3].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-4].reify.mac_address3 %> to <%= @asset.versions[-3].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-5].nil? or @asset.versions[-5].object.nil? %>
+		Asset Modified by <%= @asset.versions[-5].whodunnit %> on <%= @asset.versions[-5].created_at %>
+		<ul>
+			<% unless @asset.versions[-5].reify.location == @asset.versions[-4].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-5].reify.location %> to <%= @asset.versions[-4].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.user.full_name == @asset.versions[-4].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-5].reify.user.full_name %> to <%= @asset.versions[-4].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.asset_name == @asset.versions[-4].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-5].reify.asset_name %> to <%= @asset.versions[-4].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.serial_number == @asset.versions[-4].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-5].reify.serial_number %> to <%= @asset.versions[-4].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.mac_address1 == @asset.versions[-4].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-5].reify.mac_address1 %> to <%= @asset.versions[-4].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.mac_address2 == @asset.versions[-4].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-5].reify.mac_address2 %> to <%= @asset.versions[-4].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-5].reify.mac_address3 == @asset.versions[-4].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-5].reify.mac_address3 %> to <%= @asset.versions[-4].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-6].nil? or @asset.versions[-6].object.nil? %>
+		Asset Modified by <%= @asset.versions[-6].whodunnit %> on <%= @asset.versions[-6].created_at %>
+		<ul>
+			<% unless @asset.versions[-6].reify.location == @asset.versions[-5].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-6].reify.location %> to <%= @asset.versions[-5].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.user.full_name == @asset.versions[-5].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-6].reify.user.full_name %> to <%= @asset.versions[-5].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.asset_name == @asset.versions[-5].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-6].reify.asset_name %> to <%= @asset.versions[-5].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.serial_number == @asset.versions[-5].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-6].reify.serial_number %> to <%= @asset.versions[-5].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.mac_address1 == @asset.versions[-5].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-6].reify.mac_address1 %> to <%= @asset.versions[-5].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.mac_address2 == @asset.versions[-5].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-6].reify.mac_address2 %> to <%= @asset.versions[-5].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-6].reify.mac_address3 == @asset.versions[-5].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-6].reify.mac_address3 %> to <%= @asset.versions[-5].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-7].nil? or @asset.versions[-7].object.nil? %>
+		Asset Modified by <%= @asset.versions[-7].whodunnit %> on <%= @asset.versions[-7].created_at %>
+		<ul>
+			<% unless @asset.versions[-7].reify.location == @asset.versions[-6].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-7].reify.location %> to <%= @asset.versions[-6].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.user.full_name == @asset.versions[-6].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-7].reify.user.full_name %> to <%= @asset.versions[-6].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.asset_name == @asset.versions[-6].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-7].reify.asset_name %> to <%= @asset.versions[-6].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.serial_number == @asset.versions[-6].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-7].reify.serial_number %> to <%= @asset.versions[-6].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.mac_address1 == @asset.versions[-6].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-7].reify.mac_address1 %> to <%= @asset.versions[-6].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.mac_address2 == @asset.versions[-6].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-7].reify.mac_address2 %> to <%= @asset.versions[-6].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-7].reify.mac_address3 == @asset.versions[-6].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-7].reify.mac_address3 %> to <%= @asset.versions[-6].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+		<% unless @asset.versions[-8].nil? or @asset.versions[-8].object.nil? %>
+		Asset Modified by <%= @asset.versions[-8].whodunnit %> on <%= @asset.versions[-8].created_at %>
+		<ul>
+			<% unless @asset.versions[-8].reify.location == @asset.versions[-7].reify.location %>
+				<li>Asset relocated from <%= @asset.versions[-8].reify.location %> to <%= @asset.versions[-7].reify.location %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.user.full_name == @asset.versions[-7].reify.user.full_name %>
+				<li>Asset reassigned from <%= @asset.versions[-8].reify.user.full_name %> to <%= @asset.versions[-7].reify.user.full_name %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.asset_name == @asset.versions[-7].reify.asset_name %>
+				<li>Asset renamed from <%= @asset.versions[-8].reify.asset_name %> to <%= @asset.versions[-7].reify.asset_name %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.serial_number == @asset.versions[-7].reify.serial_number %>
+				<li>Serial number changed from <%= @asset.versions[-8].reify.serial_number %> to <%= @asset.versions[-7].reify.serial_number %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.mac_address1 == @asset.versions[-7].reify.mac_address1 %>
+				<li>Mac Address (Ethernet 1) from <%= @asset.versions[-8].reify.mac_address1 %> to <%= @asset.versions[-7].reify.mac_address1 %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.mac_address2 == @asset.versions[-7].reify.mac_address2 %>
+				<li>Mac Address (Ethernet 2) from <%= @asset.versions[-8].reify.mac_address2 %> to <%= @asset.versions[-7].reify.mac_address2 %></li>
+			<% end %>
+			<% unless @asset.versions[-8].reify.mac_address3 == @asset.versions[-7].reify.mac_address3 %>
+				<li>Mac Address (Wi-Fi) from <%= @asset.versions[-8].reify.mac_address3 %> to <%= @asset.versions[-7].reify.mac_address3 %></li>
+			<% end %>
+		</ul>
+		<% end %>

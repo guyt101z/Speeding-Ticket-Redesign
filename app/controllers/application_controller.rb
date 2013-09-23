@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
 		redirect_to login_url if current_technician.nil?
 	end
 	
+	def user_for_paper_trail
+		current_technician.full_name unless current_technician.nil?
+	end
+	
 end

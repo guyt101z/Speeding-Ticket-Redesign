@@ -52,3 +52,6 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 #Validate Emails
 gem 'email_validator'
+
+#Auditing Assets
+gem 'paper_trail', '>= 3.0.0.beta1' 
