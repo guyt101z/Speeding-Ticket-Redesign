@@ -1,10 +1,12 @@
-	<div class="Technician">
-		<ul class="properties">
-			<li>Name: <%= @technician.full_name %></li>
-			<li>Email: <%= @technician.email %></li>
-			<li><%= image_tag @technician.avatar.url(:thumb) %></li>
-			<li><%= link_to 'Edit', edit_technician_path(@technician) %></li>
-		</ul>
-	</div>
+<h1>Show Technician</h1>
+
+<div class="Technician">
+	<ul class="properties">
+		<li>Name: <%= @technician.full_name %></li>
+		<li>Email: <%= @technician.email %></li>
+		<li><%= image_tag @technician.avatar.url(:thumb), :class => 'img-circle' %></li>
+		<li><%= link_to 'Edit', edit_technician_path(@technician) %></li>
+	</ul>
+</div>
 	
-	<%= link_to 'Back', root_url %>
+<%= link_to 'Back', root_url %>

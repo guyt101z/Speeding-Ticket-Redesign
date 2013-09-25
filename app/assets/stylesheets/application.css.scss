@@ -13,3 +13,20 @@
  */
 
 @import "twitter/bootstrap";
+
+body {padding-top: 60px;}
+
+.navbar-header {padding-top: 8px;}
+
+.navbar-collapse {
+	padding-top: 8px;
+	font-size: 1.2em;
+}
+
+.navbar-right {margin-top: -8px;}
+
+.navbar-brand {
+	font-size: 1.7em;
+}
+
+footer {margin-top: 200px;}
