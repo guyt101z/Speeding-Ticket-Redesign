@@ -1,0 +1,33 @@
+<%= link_to ticket_path(ticket) do %>	
+	<div class="row">
+		<div class="col-md-1 ticket-id"><%= '00' if ticket.id < 100 %><%= ticket.id %></div>
+		<div class="col-md-3">
+			<span class="lead smaller"><%= ticket.user.full_name %></span><br>
+			<small><%= ticket.title %></small>
+		</div>
+		<div class="col-md-2">
+		<% if ticket.technicians.count <= 4 %>
+			<% ticket.technicians.each do |technician| %>
+				<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
+			<% end %>
+		<% else %>
+			<span class="img-circle border pull-right additonal-techs">+<%= ticket.technicians.count - 3 %></span>
+			<% ticket.technicians.first(3).each do |technician| %>
+				<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
+			<% end %>
+		<% end %>
+		</div>
+		<div class="col-md-1"><span class="label label-default label-placement"><%= ticket.status %></span></div>
+		<div class="col-md-2">
+			Created:<br>
+			<%= ticket.created_at.to_s(:short) %>
+		</div>
+		<div class="col-md-2">
+			Deadline:<br>
+			<%= ticket.deadline.to_s(:short) %>
+		</div>
+		<div class="col-md-1 priority">
+			<% if ticket.priority == true %>!<% end %>
+		</div>
+	</div>
+<% end %>

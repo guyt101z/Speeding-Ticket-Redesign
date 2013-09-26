@@ -1,40 +1,43 @@
-<h2> Dashboard </h2>
+<!-- Tabbed Navigation !-->
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#my_tickets"><span class="glyphicon glyphicon-tags"></span>&nbsp; My Tickets</span></a></li>
+  <li><a href="#active"><span class="glyphicon glyphicon-time"></span>&nbsp; Active</a></li>
+  <li><a href="#inactive"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Inactive</a></li>
+</ul>
 
-<br>
+<!-- Tab Content "My Tickets" !-->
+<div class="tab-content">
+  <div class="tab-pane active" id="my_tickets">
+	  <% @my_tickets.each do |ticket| %>
+	  	<div class="list-group-item list-group-item-hover">
+	    	<%= render "/tickets/ticket", :ticket => ticket %>
+      </div>
+    <% end %>
+  </div>
 
-<% @current_technician.tickets.each do |ticket| %>
-	<div class="Ticket">
-		<ul class="properties">
-			<li>Assigned Technicians:</li>
-			<ul>
-				<% ticket.technicians.each do |technician| %>
-				<li>
-					<%= technician.full_name %>
-				</li>
-				<% end %>
-			</ul>
-			<li>Asset(s):</li>
-			<ul>
-				<% ticket.assets.each do |asset| %>
-				<li>
-					<%= asset.tag_number %>
-				</li>
-				<% end %>
-			</ul>
-			<li>User: <%= ticket.user.full_name %></li>
-			<li>Title: <%= ticket.title %></li>
-			<li>Description: <%= ticket.description %></li>
-			<li>Status: <%= ticket.status %></li>
-			<li>Deadline: <%= ticket.deadline %></li>
-			<li>
-				Priority?: 
-				<% if ticket.priority == true %>
-					Yes
-				<% else %>
-					No
-				<% end %>
-			</li>
-			<li><%= link_to 'Show', ticket_path(ticket) %></li>
-		</ul>
-	</div>
-<% end %>
+<!-- Tab Content "Active" !-->
+  <div class="tab-pane" id="active">
+	  <% @active_tickets.each do |ticket| %>
+	  	<div class="list-group-item list-group-item-hover">
+	    	<%= render "/tickets/ticket", :ticket => ticket %>
+      </div>
+    <% end %>
+  </div>
+  
+<!-- Tab Content "Inactive" !-->
+  <div class="tab-pane" id="inactive">
+	  <% @inactive_tickets.each do |ticket| %>
+	  	<div class="list-group-item list-group-item-hover">
+	    	<%= render "/tickets/ticket", :ticket => ticket %>
+      </div>
+    <% end %>
+  </div>
+  
+</div>
+
+<script>
+  $('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>

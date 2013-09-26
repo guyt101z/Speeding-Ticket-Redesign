@@ -42,7 +42,9 @@ class TicketsController < ApplicationController
 	
 #Index Action
 	def index
-		@ticket_list = Ticket.all
+		@my_tickets = @current_technician.tickets.where.not(:status => 'done')
+		@active_tickets = Ticket.where.not(:status => 'done')
+		@inactive_tickets = Ticket.where(:status => 'done')
 	end
 	
 #Private Actions	

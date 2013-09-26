@@ -1,3 +1,47 @@
-// Place all the styles related to the tickets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-tabs a {
+	color: #222;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.border {
+	-webkit-box-shadow: 0px 0px 0px 2px #999;
+	box-shadow: 0px 0px 0px 2px #999;
+	margin-left: 7px;
+	margin-top: 6px;
+}
+
+.additonal-techs {
+	text-align: center;
+	line-height: 32px;
+	height: 32px;
+	width: 32px;
+	color: #777;
+}
+
+.label-placement {
+	margin-top: 14px;
+	float: right;
+	font-weight: lighter;
+}
+
+.ticket-id {
+	padding-top: 8px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.smaller {
+	font-size: 1.3em;
+}
+
+.priority {
+	line-height: 45px;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: #ea331f;
+}
+
+.list-group-item-hover:hover {
+	background-color: #efefef;
+}

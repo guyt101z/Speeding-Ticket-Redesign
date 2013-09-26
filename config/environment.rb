@@ -5,6 +5,12 @@ require File.expand_path('../application', __FILE__)
 SpeedingTicketNew::Application.initialize!
 
 #Set Universal Date/Time Format
-my_date_formats = {:default => '%b %d %Y at %I:%M %p'} 
-Time::DATE_FORMATS.merge!(my_date_formats) 
-Date::DATE_FORMATS.merge!(my_date_formats)
+long = {:default => '%b %d %Y at %I:%M %p', } 
+Time::DATE_FORMATS.merge!(long) 
+Date::DATE_FORMATS.merge!(long)
+
+#Set Universal Date/Time Format
+short = {:short => '%b %d %Y', } 
+Time::DATE_FORMATS.merge!(short) 
+Date::DATE_FORMATS.merge!(short)
+
