@@ -8,6 +8,10 @@
 <!-- Tab Content "My Tickets" !-->
 <div class="tab-content">
   <div class="tab-pane active" id="my_tickets">
+    <div class="list-group-item list-group-item-set-height">
+    	Search My Tickets...
+    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
+    </div>
 	  <% @my_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "/tickets/ticket", :ticket => ticket %>
@@ -17,6 +21,10 @@
 
 <!-- Tab Content "Active" !-->
   <div class="tab-pane" id="active">
+    <div class="list-group-item list-group-item-set-height">
+    	Search My Tickets...
+    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
+    </div>
 	  <% @active_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "/tickets/ticket", :ticket => ticket %>
@@ -26,6 +34,10 @@
   
 <!-- Tab Content "Inactive" !-->
   <div class="tab-pane" id="inactive">
+  	<div class="list-group-item list-group-item-set-height">
+    	Search My Tickets...
+    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
+    </div>
 	  <% @inactive_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "/tickets/ticket", :ticket => ticket %>

@@ -39,9 +39,24 @@
 	line-height: 45px;
 	font-size: 2.5em;
 	font-weight: bold;
-	color: #ea331f;
+	color: #f15947;
 }
 
 .list-group-item-hover:hover {
-	background-color: #efefef;
+	background-color: #f2f2f2;
+}
+
+.add-ticket {
+	color: #f15947;
+	font-size: 2.5em;
+	margin-right: 43px;
+}
+
+.add-ticket:hover {
+	color: #e54e3e;
+	font-size: 2.5em;
+}
+
+.list-group-item-set-height {
+	height: 65px;
 }
