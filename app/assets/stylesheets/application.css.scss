@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
+ *= require chosen
  */
 
 @import "twitter/bootstrap";
@@ -37,4 +39,41 @@ a:hover {
 	font-size: 1.7em;
 }
 
-footer {margin-top: 200px;}
+footer {margin-top: 150px;}
+
+.page-title {
+	margin-top: -10px;
+	margin-bottom: 50px;
+}
+
+//Change some defalts for buttons
+.btn {
+  border-radius: 6px;
+}
+
+.btn-default {
+  color: #f0f0f0;
+  background-color: #222;
+  border-color: #222;
+  -webkit-box-shadow: 0px 2px 0px rgba(20, 20, 20, 1);
+  -moz-box-shadow:    0px 2px 0px rgba(20, 20, 20, 1);
+  box-shadow:         0px 2px 0px rgba(20, 20, 20, 1);
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: #f0f0f0;
+  background-color: #333;
+  border-color: #333;
+}
+
+.btn-success {
+  -webkit-box-shadow: 0px 2px 0px rgba(60, 158, 60, 1);
+  -moz-box-shadow:    0px 2px 0px rgba(60, 158, 60, 1);
+  box-shadow:         0px 2px 0px rgba(60, 158, 60, 1);
+}
+
+

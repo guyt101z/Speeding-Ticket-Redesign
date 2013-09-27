@@ -1,47 +1,7 @@
-<h2> New Ticket </h2>
+<h3 class="page-title"> Edit Ticket </h3>
 
-<%= form_for @ticket do |f| %>
-	<% if @ticket.errors.any? %>
-		<div id='errorExplaination'>
-			<h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
-			<ul>
-			<% @ticket.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-			</ul>
-		</div>
-	<% end %>
-		<%= f.label :technician_id, "Assigned Technicians" %><br>
-		<%= hidden_field_tag "ticket[technician_ids][]", nil%>
-		<% Technician.all.each do |technician| %>
-			<%= check_box_tag "ticket[technician_ids][]", technician.id, @ticket.technician_ids.include?(technician.id), id: dom_id(technician) %>
-			<%= label_tag dom_id(technician), technician.full_name %><br/>
-		<% end %>
-		<%= f.label :asset_id, "Asset(s)" %><br>
-		<%= hidden_field_tag "ticket[asset_ids][]", nil%>
-		<% Asset.all.each do |asset| %>
-			<%= check_box_tag "ticket[asset_ids][]", asset.id, @ticket.asset_ids.include?(asset.id), id: dom_id(asset) %>
-			<%= label_tag dom_id(asset), asset.tag_number %><br/>
-		<% end %>
-		<%= f.label :user_id, "Asset User" %>
-		<%= f.collection_select :user_id, User.order('last_name ASC').all, :id, :full_name, :include_blank => ' ' %>
-		<br>
-		<%= f.label :title, "Job Title" %>
-		<%= f.text_field :title %>
-		<br>
-		<%= f.label :description, "Job Description" %>
-		<%= f.text_area :description %>
-		<br>
-		<%= f.label :status, "Job Status" %>
-		<%= f.text_field :status %>
-		<br>
-		<%= f.label :deadline, "Deadline" %>
-		<%= f.date_select :deadline %>
-		<br>
-		<%= f.label :priority, "Priority?" %>
-		<%= f.check_box :priority %>
-		<br>
-		<%= f.submit "Save Ticket" %>
-<% end %>
+<%= render "ticket_form" %>
 
-<%= link_to "back", tickets_url %>
+<div class="row col-md-offset-1">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, tickets_url %>
+</div>

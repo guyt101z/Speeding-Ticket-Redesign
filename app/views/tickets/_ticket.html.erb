@@ -24,7 +24,11 @@
 		</div>
 		<div class="col-md-2">
 			Deadline:<br>
-			<%= ticket.deadline.to_s(:short) %>
+			<% if ticket.deadline.nil? %>
+				--
+			<% else %>
+				<%= ticket.deadline.to_s(:short) %>
+			<% end %>
 		</div>
 		<div class="col-md-1 priority">
 			<% if ticket.priority == true %>!<% end %>

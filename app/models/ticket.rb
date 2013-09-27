@@ -9,6 +9,18 @@ class Ticket < ActiveRecord::Base
 	has_many :comments, as: :commentable
 
 #Validation
-	validates_presence_of :user_id, :description
+	validates_presence_of :description
+
+#Definitions
+	TICKET_STATUS = ['not started', 'in progress', 'parts hold', 'client wait', 'done']
+	
+#Methods
+	def user_email
+  	user.try(:email)
+	end
+
+	def user_email=(email)
+ 	 self.user = User.find_by_email(email) if email.present?
+ 	end
 
 end

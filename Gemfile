@@ -55,3 +55,10 @@ gem 'email_validator'
 
 #Auditing Assets
 gem 'paper_trail', '>= 3.0.0.beta1' 
+
+#jQuery UI
+gem 'jquery-ui-rails'
+
+#Token Fields
+gem 'chosen-rails'
+gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'

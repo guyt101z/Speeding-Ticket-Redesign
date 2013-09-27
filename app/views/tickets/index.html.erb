@@ -14,7 +14,7 @@
     </div>
 	  <% @my_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
-	    	<%= render "/tickets/ticket", :ticket => ticket %>
+	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
   </div>
@@ -27,7 +27,7 @@
     </div>
 	  <% @active_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
-	    	<%= render "/tickets/ticket", :ticket => ticket %>
+	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
   </div>
@@ -40,7 +40,7 @@
     </div>
 	  <% @inactive_tickets.each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
-	    	<%= render "/tickets/ticket", :ticket => ticket %>
+	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
   </div>
