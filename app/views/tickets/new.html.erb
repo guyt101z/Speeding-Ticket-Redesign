@@ -11,12 +11,12 @@
 			</ul>
 		</div>
 	<% end %>
-		<%= f.label :technician_id, "Assigned Technicians" %><br>
-		<%= hidden_field_tag "ticket[technician_ids][]", nil%>
-		<% Technician.all.each do |technician| %>
-			<%= check_box_tag "ticket[technician_ids][]", technician.id, @ticket.technician_ids.include?(technician.id), id: dom_id(technician) %>
-			<%= label_tag dom_id(technician), technician.full_name %><br/>
-		<% end %>
+		<%= f.label :technician_id, "Assigned Technicians:" %><br>
+		<div class="row">
+			<div class="col-md-2">
+				<%= f.collection_select(:technician_ids, Technician.all(:order => "last_name ASC"), :id, :full_name, {:selected => @ticket.technician_ids}, {:multiple => true}) %>
+			</div>
+		</div>
 		<%= f.label :asset_id, "Asset(s)" %><br>
 		<%= hidden_field_tag "ticket[asset_ids][]", nil%>
 		<% Asset.all.each do |asset| %>
