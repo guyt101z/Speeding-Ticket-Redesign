@@ -45,6 +45,7 @@ class TicketsController < ApplicationController
 		@my_tickets = @current_technician.tickets.where.not(:status => 'done')
 		@active_tickets = Ticket.where.not(:status => 'done')
 		@inactive_tickets = Ticket.where(:status => 'done')
+		@new_tickets = @active_tickets.where(:technicians_count => 0)
 	end
 	
 #Private Actions	

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923172152) do
+ActiveRecord::Schema.define(version: 20130930190008) do
 
   create_table "assets", force: true do |t|
     t.integer  "user_id"
@@ -45,22 +45,6 @@ ActiveRecord::Schema.define(version: 20130923172152) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "audits", force: true do |t|
-    t.integer  "auditable_id"
-    t.string   "auditable_type"
-    t.integer  "technician_id"
-    t.string   "technician_type"
-    t.string   "full_name"
-    t.string   "action"
-    t.text     "change_log"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "audits", ["auditable_id", "auditable_type"], name: "auditable_index", using: :btree
-  add_index "audits", ["created_at"], name: "index_audits_on_created_at", using: :btree
-  add_index "audits", ["technician_id", "technician_type"], name: "technician_index", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "technician_id"
@@ -131,6 +115,7 @@ ActiveRecord::Schema.define(version: 20130923172152) do
     t.boolean  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "technicians_count", default: 0
   end
 
   create_table "users", force: true do |t|

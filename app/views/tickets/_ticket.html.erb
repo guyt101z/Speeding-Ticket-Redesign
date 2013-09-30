@@ -1,6 +1,14 @@
 <%= link_to ticket_path(ticket) do %>	
 	<div class="row">
-		<div class="col-md-1 ticket-id"><%= '00' if ticket.id < 100 %><%= ticket.id %></div>
+		<div class="col-md-1 ticket-id">
+			<% if ticket.id < 10 %>
+			  00<%= ticket.id %>
+			<% elsif ticket.id >= 10 and ticket.id < 100 %>
+				0<%= ticket.id %>
+			<% else %>
+				<%= ticket.id %>
+			<% end %>
+		</div>
 		<div class="col-md-3">
 			<span class="lead smaller"><%= ticket.user.full_name %></span><br>
 			<small><%= ticket.title %></small>

@@ -1,7 +1,7 @@
 <!-- Tabbed Navigation !-->
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#my_tickets"><span class="glyphicon glyphicon-tags"></span>&nbsp; My Tickets</span></a></li>
-  <li><a href="#active"><span class="glyphicon glyphicon-time"></span>&nbsp; Active</a></li>
+  <li><a href="#active"><span class="glyphicon glyphicon-time"></span>&nbsp; Active &nbsp;<span class="badge new-tickets-badge"><%= @new_tickets.count %></span></a></li>
   <li><a href="#inactive"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Inactive</a></li>
 </ul>
 
@@ -12,7 +12,7 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @my_tickets.each do |ticket| %>
+	  <% @my_tickets.order("created_at DESC").each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
@@ -25,7 +25,7 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @active_tickets.each do |ticket| %>
+	  <% @active_tickets.order("created_at DESC").each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
@@ -38,7 +38,7 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @inactive_tickets.each do |ticket| %>
+	  <% @inactive_tickets.order("created_at DESC").each do |ticket| %>
 	  	<div class="list-group-item list-group-item-hover">
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
