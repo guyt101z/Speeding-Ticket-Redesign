@@ -62,3 +62,6 @@ gem 'jquery-ui-rails'
 #Token Fields
 gem 'chosen-rails'
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
+
+#Load jquery turbolinks on page load (rails 4 fix)
+gem 'jquery-turbolinks'

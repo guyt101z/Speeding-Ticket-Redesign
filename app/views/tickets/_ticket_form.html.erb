@@ -22,7 +22,7 @@
 			<%= f.label :technician_id, "Technician(s)", :class => 'pull-right' %>
 		</div>
 		<div class="col-md-4">
-			<%= f.collection_select(:technician_ids, Technician.all(:order => "last_name ASC"), :id, :full_name, {:selected => @ticket.technician_ids}, {:multiple => true}) %>
+			<%= f.collection_select(:technician_ids, Technician.all(:order => "email ASC"), :id, :full_name, {:selected => @ticket.technician_ids}, {:multiple => true}) %>
 		</div>
 	</div>
 		

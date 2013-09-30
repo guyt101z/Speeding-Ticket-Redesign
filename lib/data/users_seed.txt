@@ -20,7 +20,6 @@ Chittenden|Monique|CAS 472|353-1824|speesmo@msu.edu|COMM
 Barkman|Marge|CAS 466|355-3471|barkman@msu.edu|COMM
 Chrisinske|Thomi|CAS 473|355-9614|chrisin3@msu.edu|COMM
 Albers|Bob|CAS 275|355-6559|albers@msu.edu|TISM
-Alhabash|Saleem|CAS 313|432-2178|sa@msu.edu|TISM
 Bauer|Johannes|CAS 409-C|355-8372|bauerj@msu.edu|TISM
 Cotten|Shelia|CAS 404|432-8002|cotten@msu.edu|TISM
 Coursaris|Constantinos|CAS 424|353-3122|coursari@msu.edu|TISM
@@ -193,7 +192,7 @@ Zeldes|Geri|CAS 280|910-0687|alumitge@msu.edu|JRN
 Friess|Steve|CAS 358|------|sfriess@msu.edu|JRN
 Schimpf|Sheila|CAS 238|------|schimpf@msu.edu|JRN
 Sofradzija|Omar|The State News|------|omars@msu.edu|JRN
-Alhabash|Saleem|CAS 313|432-2178|SA@msu.edu|ADPR
+Alhabash|Saleem|CAS 313|432-2178|sa@msu.edu|ADPR
 Besley|John|CAS 378|884-4411|jbesley@msu.edu|ADPR
 Brimmer|Henry|CAS 267|355-2314|hbrimmer@msu.edu|ADPR
 Bukovac-Phelps|Janice|CAS 325|355-6576|bukovac@msu.edu|ADPR
