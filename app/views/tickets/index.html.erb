@@ -17,7 +17,9 @@
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
+    <%= will_paginate @my_tickets %>
   </div>
+  
 
 <!-- Tab Content "Active" !-->
   <div class="tab-pane" id="active">
@@ -30,6 +32,7 @@
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
+    <%= will_paginate @active_tickets %>
   </div>
   
 <!-- Tab Content "Inactive" !-->
@@ -43,13 +46,28 @@
 	    	<%= render "ticket", :ticket => ticket %>
       </div>
     <% end %>
+    <%= will_paginate @inactive_tickets %>
   </div>
   
 </div>
 
 <script>
-  $('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
+	// cache the id
+	var navbox = $('#myTab');
+	// activate tab on click
+	navbox.on('click', 'a', function (e) {
+  	var $this = $(this);
+		// prevent the Default behavior
+		e.preventDefault();
+		// set the hash to the address bar
+		window.location.hash = $this.attr('href');
+		// activate the clicked tab
+		$this.tab('show');
+	})
+
+	// if we have a hash in the address bar
+	if(window.location.hash){
+  	// show right tab on load (read hash from address bar)
+		navbox.find('a[href="'+window.location.hash+'"]').tab('show');
+	}
 </script>

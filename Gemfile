@@ -65,3 +65,6 @@ gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 
 #Load jquery turbolinks on page load (rails 4 fix)
 gem 'jquery-turbolinks'
+
+#paginate that shit
+gem 'will_paginate', '~> 3.0'
