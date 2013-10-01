@@ -25,7 +25,19 @@
 			<% end %>
 		<% end %>
 		</div>
-		<div class="col-md-1"><span class="label label-default label-placement"><%= ticket.status %></span></div>
+		<div class="col-md-1">
+			<% if ticket.status == "not started" %>
+				<span class="label label-danger label-placement"><%= ticket.status %></span>
+			<% elsif ticket.status == "in progress" %>
+				<span class="label label-success label-placement"><%= ticket.status %></span>
+			<% elsif ticket.status == "parts hold" %>
+				<span class="label label-info label-placement"><%= ticket.status %></span>
+			<% elsif ticket.status == "client wait" %>
+				<span class="label label-primary label-placement"><%= ticket.status %></span>
+			<% elsif ticket.status == "done" %>
+				<span class="label label-default label-placement"><%= ticket.status %></span>
+			<% end %>
+		</div>
 		<div class="col-md-2">
 			Created:<br>
 			<%= ticket.created_at.to_s(:short) %>

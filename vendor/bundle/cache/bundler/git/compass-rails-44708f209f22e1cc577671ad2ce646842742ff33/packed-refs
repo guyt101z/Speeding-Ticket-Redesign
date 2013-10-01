@@ -1,7 +1,9 @@
 # pack-refs with: peeled fully-peeled 
-47d889ad8dabdab1e9f44da4447f94846c089c50 refs/heads/master
-c86e7fd9c2605c80816a2f64a3fb8b7c3a09e494 refs/heads/rails4
-98e4b115c8bb6395a1c3351926d574321396778b refs/heads/stable
+aea69635f6000bbc7180f7fdd0ce216f904db30d refs/heads/master
+3e0040191220992eb6d5ccc17ddcc053733ee538 refs/heads/rails4
+32c16cb90f78053310b35199a970c53355bcd300 refs/heads/rails4-hack
+bddaaad7184e9a8135edf487e4a2281bd8411533 refs/heads/regression_test_for_issue_13
+b615c4cc77f362a4d792f87f5f60347a4860b5a5 refs/heads/stable
 47e8635c8114974673f9e7e57f2739a528f1427f refs/tags/v1.0.0
 ^72fe221e546582c7ea316ee6d73810cba8f841d3
 2c70941f83eccfd12fa6e872f3ed63b871819791 refs/tags/v1.0.0.rc.0

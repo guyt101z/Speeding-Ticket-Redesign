@@ -1,7 +1,7 @@
 <!-- Tabbed Navigation !-->
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#my_tickets"><span class="glyphicon glyphicon-tags"></span>&nbsp; My Tickets</span></a></li>
-  <li><a href="#active"><span class="glyphicon glyphicon-time"></span>&nbsp; Active &nbsp;<span class="badge new-tickets-badge"><%= @new_tickets.count %></span></a></li>
+  <li><a href="#active"><span class="glyphicon glyphicon-time"></span>&nbsp; Active &nbsp;<span class="badge new-tickets-badge"><%= @new_tickets.count if @new_tickets.count > 0 %></span></a></li>
   <li><a href="#inactive"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Inactive</a></li>
 </ul>
 
