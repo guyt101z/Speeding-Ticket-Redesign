@@ -1,57 +1,59 @@
-<%= link_to ticket_path(ticket) do %>	
-	<div class="row">
-		<div class="col-md-1 ticket-id">
-			<% if ticket.id < 10 %>
-			  00<%= ticket.id %>
-			<% elsif ticket.id >= 10 and ticket.id < 100 %>
-				0<%= ticket.id %>
+<div class="list-group-item list-group-item-hover">
+	<%= link_to ticket_path(ticket) do %>	
+		<div class="row">
+			<div class="col-md-1 ticket-id">
+				<% if ticket.id < 10 %>
+				  00<%= ticket.id %>
+				<% elsif ticket.id >= 10 and ticket.id < 100 %>
+					0<%= ticket.id %>
+				<% else %>
+					<%= ticket.id %>
+				<% end %>
+			</div>
+			<div class="col-md-3">
+				<span class="lead smaller"><%= ticket.user.full_name %></span><br>
+				<small><%= ticket.title %></small>
+			</div>
+			<div class="col-md-2">
+			<% if ticket.technicians.count <= 4 %>
+				<% ticket.technicians.each do |technician| %>
+					<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
+				<% end %>
 			<% else %>
-				<%= ticket.id %>
+				<span class="img-circle border pull-right additonal-techs">+<%= ticket.technicians.count - 3 %></span>
+				<% ticket.technicians.first(3).each do |technician| %>
+					<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
+				<% end %>
 			<% end %>
+			</div>
+			<div class="col-md-1">
+				<% if ticket.status == "not started" %>
+					<span class="label label-danger label-placement"><%= ticket.status %></span>
+				<% elsif ticket.status == "in progress" %>
+					<span class="label label-success label-placement"><%= ticket.status %></span>
+				<% elsif ticket.status == "parts hold" %>
+					<span class="label label-info label-placement"><%= ticket.status %></span>
+				<% elsif ticket.status == "client wait" %>
+					<span class="label label-primary label-placement"><%= ticket.status %></span>
+				<% elsif ticket.status == "done" %>
+					<span class="label label-default label-placement"><%= ticket.status %></span>
+				<% end %>
+			</div>
+			<div class="col-md-2">
+				Created:<br>
+				<%= ticket.created_at.to_s(:short) %>
+			</div>
+			<div class="col-md-2">
+				Deadline:<br>
+				<% if ticket.deadline.nil? %>
+					--
+				<% else %>
+					<%= ticket.deadline.to_s(:short) %>
+				<% end %>
+			</div>
+			<div class="col-md-1 priority">
+				<% if ticket.priority == true %>!<% end %>
+			</div>
 		</div>
-		<div class="col-md-3">
-			<span class="lead smaller"><%= ticket.user.full_name %></span><br>
-			<small><%= ticket.title %></small>
-		</div>
-		<div class="col-md-2">
-		<% if ticket.technicians.count <= 4 %>
-			<% ticket.technicians.each do |technician| %>
-				<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
-			<% end %>
-		<% else %>
-			<span class="img-circle border pull-right additonal-techs">+<%= ticket.technicians.count - 3 %></span>
-			<% ticket.technicians.first(3).each do |technician| %>
-				<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border pull-right' %>
-			<% end %>
-		<% end %>
-		</div>
-		<div class="col-md-1">
-			<% if ticket.status == "not started" %>
-				<span class="label label-danger label-placement"><%= ticket.status %></span>
-			<% elsif ticket.status == "in progress" %>
-				<span class="label label-success label-placement"><%= ticket.status %></span>
-			<% elsif ticket.status == "parts hold" %>
-				<span class="label label-info label-placement"><%= ticket.status %></span>
-			<% elsif ticket.status == "client wait" %>
-				<span class="label label-primary label-placement"><%= ticket.status %></span>
-			<% elsif ticket.status == "done" %>
-				<span class="label label-default label-placement"><%= ticket.status %></span>
-			<% end %>
-		</div>
-		<div class="col-md-2">
-			Created:<br>
-			<%= ticket.created_at.to_s(:short) %>
-		</div>
-		<div class="col-md-2">
-			Deadline:<br>
-			<% if ticket.deadline.nil? %>
-				--
-			<% else %>
-				<%= ticket.deadline.to_s(:short) %>
-			<% end %>
-		</div>
-		<div class="col-md-1 priority">
-			<% if ticket.priority == true %>!<% end %>
-		</div>
-	</div>
-<% end %>
+	<% end %>
+</div>

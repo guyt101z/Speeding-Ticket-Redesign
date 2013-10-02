@@ -12,12 +12,9 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @my_tickets.order("created_at DESC").each do |ticket| %>
-	  	<div class="list-group-item list-group-item-hover">
+	  <% @my_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
-      </div>
     <% end %>
-    <%= will_paginate @my_tickets %>
   </div>
   
 
@@ -27,12 +24,9 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @active_tickets.order("created_at DESC").each do |ticket| %>
-	  	<div class="list-group-item list-group-item-hover">
+	  <% @active_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
-      </div>
     <% end %>
-    <%= will_paginate @active_tickets %>
   </div>
   
 <!-- Tab Content "Inactive" !-->
@@ -41,13 +35,11 @@
     	Search My Tickets...
     	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
     </div>
-	  <% @inactive_tickets.order("created_at DESC").each do |ticket| %>
-	  	<div class="list-group-item list-group-item-hover">
+	  <% @inactive_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
-      </div>
     <% end %>
-    <%= will_paginate @inactive_tickets %>
   </div>
+  <%= will_paginate @inactive_tickets %>
   
 </div>
 

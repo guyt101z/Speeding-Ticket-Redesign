@@ -16,7 +16,7 @@
 				</li>
 				<% end %>
 			</ul>
-			<li>User: <%= @ticket.user.full_name %></li>
+			<li>User: <%= @ticket.user.full_name if @ticket.user %></li>
 			<li>Title: <%= @ticket.title %></li>
 			<li>Description: <%= @ticket.description %></li>
 			<li>Status: <%= @ticket.status %></li>
