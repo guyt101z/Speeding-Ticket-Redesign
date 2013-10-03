@@ -5,25 +5,24 @@
   <li><a href="#inactive"><span class="glyphicon glyphicon-inbox"></span>&nbsp; Inactive</a></li>
 </ul>
 
-<!-- Tab Content "My Tickets" !-->
+<!-- Search Box -> Add Ticket Button !-->
+<div class="list-group-item list-group-item-set-height">
+	<%= form_tag tickets_path, :method => 'get', :id => "tickets_search" do %>
+		<%= text_field_tag :search, params[:search], :autocomplete => 'off', :placeholder => 'Search Tickets...' %>
+  <div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>    	
+</div>
+
 <div class="tab-content">
+<!-- Tab Content "My Tickets" !-->
   <div class="tab-pane active" id="my_tickets">
-    <div class="list-group-item list-group-item-set-height">
-    	Search My Tickets...
-    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
-    </div>
 	  <% @my_tickets.each do |ticket| %>
-	    	<%= render "ticket", :ticket => ticket %>
+	    <%= render "ticket", :ticket => ticket %>
     <% end %>
   </div>
   
 
 <!-- Tab Content "Active" !-->
   <div class="tab-pane" id="active">
-    <div class="list-group-item list-group-item-set-height">
-    	Search My Tickets...
-    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
-    </div>
 	  <% @active_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
     <% end %>
@@ -31,18 +30,19 @@
   
 <!-- Tab Content "Inactive" !-->
   <div class="tab-pane" id="inactive">
-  	<div class="list-group-item list-group-item-set-height">
-    	Search My Tickets...
-    	<div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_ticket_path %></div>
-    </div>
 	  <% @inactive_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
     <% end %>
   </div>
+  
+  <% end %>
+
+<!-- Pagination (hidden - inifinite scroll on inactive tickets) !-->  
   <%= will_paginate @inactive_tickets %>
   
 </div>
 
+<!-- Javascript for persistant tabs !-->
 <script>
 	// cache the id
 	var navbox = $('#myTab');

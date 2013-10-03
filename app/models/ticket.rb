@@ -23,4 +23,12 @@ class Ticket < ActiveRecord::Base
  	 self.user = User.find_by_email(email) if email.present?
  	end
 
+ 	def self.search(search)
+  	if search
+   	 Ticket.joins(:user).where('title LIKE ? OR description LIKE ? OR users.first_name LIKE ? OR users.last_name LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+	 	else
+    	scoped
+		end
+	end
+
 end

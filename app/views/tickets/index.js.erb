@@ -1,3 +1,7 @@
+$("#my_tickets").html('<%= j render(@my_tickets) %>');
+$("#active").html('<%= j render(@active_tickets) %>');
+$("#inactive").html('<%= j render(@inactive_tickets) %>');
+
 $('#inactive').append('<%= j render(@inactive_tickets) %>');
 <% if @inactive_tickets.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@inactive_tickets) %>');

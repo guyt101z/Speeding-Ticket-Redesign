@@ -18,3 +18,11 @@
 //= require twitter/bootstrap
 //= require jquery.ui.all
 //= require chosen-jquery
+
+
+$(function() {
+  $("#tickets_search input").keyup(function() {
+    $.get($("#tickets_search").attr("action"), $("#tickets_search").serialize(), null, "script");
+    return false;
+  });
+});

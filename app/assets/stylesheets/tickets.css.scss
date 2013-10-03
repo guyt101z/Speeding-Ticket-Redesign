@@ -87,3 +87,15 @@
 .pagination {
 	color: #fff;
 }
+
+#search {
+	border: none;
+	background-color: #fff;
+	height: 45px;
+	font-size: 1.2em;
+	color: #333;
+}
+
+#search:focus{
+	outline: 0;
+}

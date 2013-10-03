@@ -42,9 +42,9 @@ class TicketsController < ApplicationController
 	
 #Index Action
 	def index
-		@my_tickets = @current_technician.tickets.where.not(:status => 'done').order("created_at DESC")
-		@active_tickets = Ticket.where.not(:status => 'done').order("created_at DESC")
-		@inactive_tickets = Ticket.where(:status => 'done').order("created_at DESC").page(params[:page]).per_page(13)
+		@my_tickets = @current_technician.tickets.where.not(:status => 'done').search(params[:search]).order("created_at DESC")
+		@active_tickets = Ticket.where.not(:status => 'done').search(params[:search]).order("created_at DESC")
+		@inactive_tickets = Ticket.where(:status => 'done').search(params[:search]).order("created_at DESC").page(params[:page]).per_page(13)
 		@new_tickets = @active_tickets.where(:technicians_count => 0)
 	end
 	
