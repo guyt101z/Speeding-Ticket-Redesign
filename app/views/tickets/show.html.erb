@@ -1,5 +1,33 @@
-	<div class="Ticket">
-		<ul class="properties">
+<div class="col-md-12">
+	<span class="title"><%= @ticket.title %></span>
+	
+	<% if @ticket.priority == true %><span class="priority-show">Priority</span><% end %>
+	
+	<% if @ticket.status == "not started" %>
+		<span class="label label-danger label-show"><%= @ticket.status %></span>
+	<% elsif @ticket.status == "in progress" %>
+		<span class="label label-success label-show"><%= @ticket.status %></span>
+	<% elsif @ticket.status == "parts hold" %>
+		<span class="label label-info label-show"><%= @ticket.status %></span>
+	<% elsif @ticket.status == "client wait" %>
+		<span class="label label-primary label-show"><%= @ticket.status %></span>
+	<% elsif @ticket.status == "done" %>
+		<span class="label label-default label-show"><%= @ticket.status %></span>
+	<% end %>
+	
+	<% @ticket.technicians.each do |technician| %>
+		<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border-show' %>
+	<% end %>
+	
+</div>
+
+<div class="well well-sm"><%= @ticket.description %></div>
+
+
+
+
+
+
 			<li>Assigned Technicians:</li>
 			<ul>
 				<% @ticket.technicians.each do |technician| %>
@@ -17,8 +45,6 @@
 				<% end %>
 			</ul>
 			<li>User: <%= @ticket.user.full_name if @ticket.user %></li>
-			<li>Title: <%= @ticket.title %></li>
-			<li>Description: <%= @ticket.description %></li>
 			<li>Status: <%= @ticket.status %></li>
 			<li>Deadline: <%= @ticket.deadline %></li>
 			<li>
@@ -31,7 +57,6 @@
 			</li>
 			<li><%= link_to 'Edit', edit_ticket_path(@ticket) %></li>
 		</ul>
-	</div>
 	
 	<%= link_to 'Back', root_url %>
 	
