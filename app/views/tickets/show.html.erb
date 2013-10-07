@@ -1,5 +1,14 @@
 <div class="col-md-12">
-	<span class="title"><%= @ticket.title %></span>
+	<span class="title">
+		<% if @ticket.id < 10 %>
+			00<%= @ticket.id %>
+		<% elsif @ticket.id >= 10 and @ticket.id < 100 %>
+			0<%= @ticket.id %>
+		<% else %>
+			<%= @ticket.id %>
+		<% end %>
+		- <%= @ticket.title %>
+	</span>
 	
 	<% if @ticket.priority == true %><span class="priority-show">Priority</span><% end %>
 	
@@ -19,48 +28,75 @@
 		<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border-show' %>
 	<% end %>
 	
+	<br>
+
+<% if @ticket.deadline.nil? %>
+<% else %>
+	<% if @ticket.deadline < Date.today %>
+		<span class="past-due">
+			Deadline: <%= @ticket.deadline.to_s(:short) %>
+		</span>
+	<% else %>
+		<span class="deadline">
+			Deadline: <%= @ticket.deadline.to_s(:short) %>
+		</span>
+	<% end %>
+<% end %>
 </div>
 
-<div class="well well-sm"><%= @ticket.description %></div>
+<div class="col-md-12">
+	<% if @ticket.user %>
+		<div class="row user">
+			<div class="col-md-1">
+				<%= image_tag @ticket.user.avatar.url(:thumb), :class => 'img-circle border' %>
+			</div>
+			<div class="col-md-4">
+				<strong><%= @ticket.user.full_name %> (<%= @ticket.user.email %>)</strong>
+				<br>
+				<%= @ticket.user.location %> | <%= @ticket.user.phone_number %> | <%= @ticket.user.department %>
+			</div>
+		</div>
+	<% end %>
+</div>
 
+<div class="row">
+	<div class="col-md-5"><hr></div>
+</div>
 
+<div class="col-md-12">
+	<% if @ticket.attachments %>
+		<% @ticket.assets.each do |asset| %>
+			<div class="row assets">
+				<div class="col-md-1">
+					
+				</div>
+				<div class="col-md-4">
+					<strong>Tag Number: <%= asset.tag_number %> (<%= asset.asset_name %>)</strong>
+					<br>
+					User: <%= asset.user.full_name %> | Location: <%= asset.location %>
+				</div>
+			</div>
+		<% end %>
+		<% else %>
+			No asset assigned
+	<% end %>
+</div>
 
+<div class="row col-md-12 description">Ticket Description:</div>
+<div class="well well-sm col-md-9"><%= @ticket.description %></div>
 
+<div class="row col-md-12 edit-btn">
+	<%= link_to 'Edit Ticket', edit_ticket_path(@ticket), :class => 'btn btn-default' %>
+</div>
 
-
-			<li>Assigned Technicians:</li>
-			<ul>
-				<% @ticket.technicians.each do |technician| %>
-				<li>
-					<%= technician.full_name %>
-				</li>
-				<% end %>
-			</ul>
-			<li>Asset(s):</li>
-			<ul>
-				<% @ticket.assets.each do |asset| %>
-				<li>
-					<%= asset.tag_number %>
-				</li>
-				<% end %>
-			</ul>
-			<li>User: <%= @ticket.user.full_name if @ticket.user %></li>
-			<li>Status: <%= @ticket.status %></li>
-			<li>Deadline: <%= @ticket.deadline %></li>
-			<li>
-				Priority?: 
-				<% if @ticket.priority == true %>
-					Yes
-				<% else %>
-					No
-				<% end %>
-			</li>
-			<li><%= link_to 'Edit', edit_ticket_path(@ticket) %></li>
-		</ul>
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, root_url %>
+</div>	
 	
-	<%= link_to 'Back', root_url %>
-	
-	
-	<h2>Comments</h2>
+<div class="row col-md-12 description">Comments:</div>
+<div class="row">&nbsp;</div>
 	<%= render "comments/form" %>
+<div class="row">
+	<div class="col-md-9">&nbsp;</div>
+</div>
 	<%= render "comments/comments" %>

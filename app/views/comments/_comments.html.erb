@@ -1,8 +1,9 @@
-<div id="comments">
+<div class="row">
 <% @comments.each do |comment| %>
-	<div class="comment">
-		<%= comment.technician.full_name %> - <%= comment.created_at %>
+	<div class="col-md-9 comment">
+		<span class="comment-by"><%= comment.technician.full_name %> - <%= comment.created_at %></span>
 		<%= simple_format comment.content %>
+		<hr>
 	</div>
 <% end %>
 </div>

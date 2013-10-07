@@ -11,7 +11,7 @@
 				<% end %>
 			</div>
 			<div class="col-md-3">
-				<span class="lead smaller"><%= ticket.user.full_name %></span><br>
+				<span class="lead smaller"><%= ticket.user.full_name if ticket.user %></span><br>
 				<small><%= ticket.title %></small>
 			</div>
 			<div class="col-md-2">
