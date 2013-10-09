@@ -19,3 +19,6 @@
 /public/system/users
 /public/system/technicians
 /public/system/types
+
+# Ignore bundle
+/vendor

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: minitest 4.7.5 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "minitest"
@@ -16,7 +17,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "bfts"
-  s.rubygems_version = "2.0.3"
+  s.rubygems_version = "2.1.6"
   s.summary = "minitest provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking"
 
   if s.respond_to? :specification_version then
