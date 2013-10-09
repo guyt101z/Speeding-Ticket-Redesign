@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
 #New Action
     def new
-    	@comment = @commentable.comments.new
+    	@comment = @commentable.comments.new(comment_params)
     end
     
 #Create Action
@@ -33,6 +33,6 @@ private
 	
 	def comment_params
 		params.require(:comment).permit(:technician_id, :commentable_id, :commentable_type, :content)
-    end
+  end
     
 end

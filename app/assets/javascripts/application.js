@@ -18,6 +18,7 @@
 //= require twitter/bootstrap
 //= require jquery.ui.all
 //= require chosen-jquery
+//= require turbolinks
 
 
 $(function() {
