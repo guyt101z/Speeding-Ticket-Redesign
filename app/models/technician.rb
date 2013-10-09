@@ -12,7 +12,7 @@ class Technician < ActiveRecord::Base
 	
 #Attachements
 	has_secure_password
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "32x32>" }, :default_url => "/images/:style/missing.png"
+	has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "32x32>" }, :default_url => "/images/:style/missing.png"
 
 #Generate authorization token before creating user
 	before_create {generate_token(:auth_token)}

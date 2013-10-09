@@ -1,27 +1,16 @@
-<h2> All Users </h2>
+<h2> Communication Arts & Sciences Users </h2>
 
-<%= link_to "Add a new user", new_user_url %>
+<div class="list-group-item list-group-item-set-height">
+	<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+		<%= text_field_tag :search, params[:search], :autocomplete => 'off', :placeholder => 'Search Users...' %>
+  <div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_user_path %></div>    	
+</div>
 
-<br><br>
-
-<% @user_list.order('last_name ASC').each do |user| %>
-	<div class="user">
-		<ul class="details">
-			<li>First Name: <%= user.first_name %></li>
-			<li>Last Name: <%= user.last_name %></li>
-			<li>Email: <%= user.email %></li>
-			<li>Location: <%= user.location %></li>
-			<li>Phone Number: <%= user.phone_number %></li>
-			<li>Department: <%= user.department %></li>
-			<li><%= image_tag user.avatar.url(:thumb) %></li>
-			<li>Assets:</li>
-			<ul>
-			<% user.assets.each do |asset| %>
-				<li>Tag Number: <%= asset.tag_number %></li>
-			<% end %>
-			</ul>
-			<li><%= link_to 'Show', user_path(user) %></li>
-			<li><%= link_to 'Edit', edit_user_path(user) %> </li>
-		</ul>
-	</div>
+<div id="users">
+	<% @user_list.order('last_name ASC').each do |user| %>
+		<%= render "user", :user => user  %>
+	<% end %>
+</div>
 <% end %>
+
+

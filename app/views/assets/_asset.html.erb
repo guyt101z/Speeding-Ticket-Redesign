@@ -1,0 +1,12 @@
+<%= link_to asset_path(asset) do %>
+	<div class="row assets">
+		<div class="col-md-1">
+						
+		</div>
+		<div class="col-md-4">
+			<strong>Tag Number: <%= asset.tag_number %> (<%= asset.asset_name %>)</strong>
+			<br>
+			User: <%= asset.user.full_name %> | Location: <%= asset.location %>
+		</div>
+	</div>
+<% end %>

@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
 #Index Action	
 	def index
-		@user_list = User.all
+		@user_list = User.all.search(params[:search])
 	end
 	
 #Private Actions	

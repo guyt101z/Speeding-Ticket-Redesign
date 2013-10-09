@@ -1,0 +1,92 @@
+<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+			<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :first_name, "First Name" %>
+			<br>
+			<%= f.text_field :first_name, :class => 'form-control' %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :last_name, "Last Name" %>
+			<br>
+			<%= f.text_field :last_name, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :email, "Email" %>
+			<br>
+			<%= f.text_field :email, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :location, "Location" %> <span class="example">(example: CAS ###)</span>
+			<br>
+			<%= f.text_field :location, :class => 'form-control' %>
+		</div>
+	</div>
+		
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :phone_number, "Phone Number" %>
+			<br>
+			<%= f.text_field :phone_number, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :department, "Department" %>
+			<br>
+			<%= f.select(:department, User::DEPARTMENT) %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<% if @user.avatar %>
+			<div class="col-md-1">
+				<%= image_tag @user.avatar.url(:thumb), :class => 'img-circle border' %>
+			</div>
+		<% end %>
+		<div class="col-md-3">
+			<%= f.label :avatar, "Upload an Avatar" %>
+			<br>
+			<%= f.file_field :avatar %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.submit "Save User", :class => 'btn btn-success' %>
+		</div>
+	</div>
+
+<% end %>
+
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>

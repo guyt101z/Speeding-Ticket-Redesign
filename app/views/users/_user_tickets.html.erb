@@ -1,0 +1,10 @@
+<div class="row user">
+	<div class="col-md-1">
+		<%= image_tag @ticket.user.avatar.url(:thumb), :class => 'img-circle border' %>
+	</div>
+	<div class="col-md-4">
+		<strong><%= @ticket.user.full_name %> (<%= @ticket.user.email %>)</strong>
+		<br>
+		<%= @ticket.user.location %> | <%= @ticket.user.phone_number %> | <%= @ticket.user.department %>
+	</div>
+</div>

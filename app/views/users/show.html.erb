@@ -1,32 +1,50 @@
-	<div class="user">
-		<ul class="details">
-			<li>First Name: <%= @user.first_name %></li>
-			<li>Last Name: <%= @user.last_name %></li>
-			<li>Email: <%= @user.email %></li>
-			<li>Location: <%= @user.location %></li>
-			<li>Phone Number: <%= @user.phone_number %></li>
-			<li>Department: <%= @user.department %></li>
-			<li><%= image_tag @user.avatar.url(:thumb) %></li>
-			<li>Assets:</li>
-			<ul>
-			<% @user.assets.each do |asset| %>
-				<li>Tag Number: <%= asset.tag_number %></li>
-			<% end %>
-			</ul>
-			<li><%= link_to 'Edit', edit_user_path(@user) %></li>
-		</ul>
+<div class="row">
+	<div class="col-md-2">
+		<%= image_tag @user.avatar.url(:medium), :class => 'img-circle border' %>
 	</div>
+	<div class="col-md-10 user-info">
+		<strong><%= @user.full_name %> (<%= @user.email %>)</strong>
+		<br>
+		<%= @user.location %> | <%= @user.phone_number %> | <%= @user.department %>
+		<br>
+		<%= link_to 'Edit User', edit_user_path(@user), :class => 'btn btn-default btn-xs' %>
+	</div>
+</div>
+
+<hr class="user-hr">
+
+<h4>Assets:</h4>
+<% @user.assets.each do |asset| %>
+	<%= link_to asset_path(asset) do %>
+		<div class="row assets">
+			<div class="col-md-2">
+						
+			</div>
+			<div class="col-md-10 asset-info">
+				<strong><%= asset.asset_type %> <%= asset.tag_number %> (<%= asset.asset_name %>)</strong>
+				<br>
+				Location: <%= asset.location %> | Serial Number: <%= asset.serial_number %>
+			</div>
+		</div>
+	<% end %>	
+<% end %>
+
+<hr class="user-hr">
+
+<h4>Purchases:</h4>	
+	<% @user.purchases.each do |purchase| %>
+		Purchase: <%= purchase.id %>
+	<% end %>
 	
 	
-	----------
-	<li>Purchases:</li>
-			<ul>
-			<% @user.purchases.each do |purchase| %>
-				<li>Purchase: <%= purchase.id %></li>
-			<% end %>
-			</ul>
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, users_url %>
+</div>	
 	
-	
-	<h2>Comments</h2>
+<div class="row col-md-12 description">Comments:</div>
+<div class="row">&nbsp;</div>
 	<%= render "comments/form" %>
+<div class="row">
+	<div class="col-md-9">&nbsp;</div>
+</div>
 	<%= render "comments/comments" %>

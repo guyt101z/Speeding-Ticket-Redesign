@@ -1,3 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.example {
+	color: #888;
+}
+
+.user-info {
+	font-size: 2em;
+	height: 85px;
+	padding-top: 15px;
+}
+
+.user-hr {
+	margin-top: 60px;
+	padding-bottom: 30px;
+}
+
+.asset-info {
+	font-size: 1.4em;
+	height: 85px;
+	padding-top: 15px;
+}
