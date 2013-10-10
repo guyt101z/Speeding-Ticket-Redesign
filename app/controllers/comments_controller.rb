@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 		@comment = @commentable.comments.new(comment_params)
 		@comment.technician_id = current_technician.id
 		if @comment.save
-			redirect_to @commentable, notice: "comment created"
+			redirect_to @commentable
 		else
 			render "new"
 		end

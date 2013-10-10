@@ -33,7 +33,14 @@
 
 <h4>Purchases:</h4>	
 	<% @user.purchases.each do |purchase| %>
-		Purchase: <%= purchase.id %>
+		<ul>
+			<% if purchase.item_name and purchase.software.nil? %>
+				<li><strong><%= purchase.item_name %></strong> on account <%= purchase.account_number %></li>
+			<% end %>
+			<% if purchase.software %>
+				<li><strong><%= purchase.software.title %></strong> on account <%= purchase.account_number %></li>
+			<% end %>
+		</ul>
 	<% end %>
 	
 	

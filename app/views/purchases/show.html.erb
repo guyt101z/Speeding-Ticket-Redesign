@@ -1,7 +1,7 @@
 	<div class="order">
 		<ul class="details">
 			<li>Asset: <%= @purchase.asset.tag_number %></li>
-			<li>Software: <%= @purchase.software.title %></li>
+			<li>Software: <%= @purchase.software.title if @purchase.software %></li>
 			<li>User: <%= @purchase.user.full_name %></li>
 			<li>Item Name: <%= @purchase.item_name %></li>
 			<li>Part Number: <%= @purchase.part_number %></li>
