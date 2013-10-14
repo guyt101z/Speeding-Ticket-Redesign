@@ -8,7 +8,7 @@
 	  	<%= form_tag sessions_path do %>
     		<div class="row">
     			<div class="col-md-6">
-    				<%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'email' %>
+    				<%= text_field_tag :email, params[:email], :class => 'form-control', :autocomplete => 'off', :placeholder => 'email' %>
    				</div>
    				<div class="col-md-3 col-md-offset-2">
    					<%= submit_tag '&nbsp;&nbsp; LOG IN  &nbsp;&nbsp;'.html_safe, :class => 'btn btn-default' %>

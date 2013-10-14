@@ -15,4 +15,13 @@ class Asset < ActiveRecord::Base
 	validates_presence_of :location, :tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer
 	validates_uniqueness_of :tag_number, :serial_number
 	
+#Methods
+	def user_email
+  	user.try(:email)
+	end
+
+	def user_email=(email)
+ 	 self.user = User.find_by_email(email) if email.present?
+ 	end
+	
 end
