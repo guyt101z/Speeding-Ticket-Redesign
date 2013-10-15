@@ -14,6 +14,11 @@ class Asset < ActiveRecord::Base
 #Validation
 	validates_presence_of :location, :tag_number, :asset_type, :asset_name, :model, :serial_number, :manufacturer
 	validates_uniqueness_of :tag_number, :serial_number
+	validates_uniqueness_of :mac_address1, :allow_blank => true
+	
+#Definitions
+	ASSET_TYPE = ['', 'Apple Laptop', 'Apple Desktop', 'Windows Laptop', 'Windows Desktop', 'iPad', 'Windows Tablet', 'iPod', 'Monitor', 'External HDD', 'Server', 'Linux PC', 'Apple TV', 'Camera', 'Loud Speakers', 'Projector', 'Television', 'Video Equiptment', 'Printer', 'Network Device']
+	
 	
 #Methods
 	def user_email
