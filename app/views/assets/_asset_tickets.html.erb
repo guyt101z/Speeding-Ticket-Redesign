@@ -1,0 +1,50 @@
+<%= link_to asset_path(asset) do %>
+	<div class="row">
+		<div class="col-md-1">
+			<% if asset.asset_type == "Apple Laptop" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/apple_laptop.png">
+			<% elsif asset.asset_type == "Apple Desktop" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/apple_desktop.png">
+			<% elsif asset.asset_type == "Windows Laptop" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/windows_laptop.png">
+			<% elsif asset.asset_type == "Windows Desktop" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/windows_desktop.png">
+			<% elsif asset.asset_type == "iPad" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/ipad.png">
+			<% elsif asset.asset_type == "Windows Tablet" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/windows_tablet.png">
+			<% elsif asset.asset_type == "iPod" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/ipod.png">
+			<% elsif asset.asset_type == "Monitor" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/monitor.png">
+			<% elsif asset.asset_type == "External HDD" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/external_hdd.png">
+			<% elsif asset.asset_type == "Server" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/server.png">
+			<% elsif asset.asset_type == "Linux PC" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/linux_pc.png">
+			<% elsif asset.asset_type == "Apple TV" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/apple_tv.png">
+			<% elsif asset.asset_type == "Camera" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/camera.png">
+			<% elsif asset.asset_type == "Loud Speakers" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/loud_speakers.png">
+			<% elsif asset.asset_type == "Projector" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/projector.png">
+			<% elsif asset.asset_type == "Television" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/television.png">
+			<% elsif asset.asset_type == "Video Equiptment" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/video_equiptment.png">
+			<% elsif asset.asset_type == "Printer" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/printer.png">
+			<% elsif asset.asset_type == "Network Device" %>
+				<img class="img-circle border" src="/images/asset_types/thumb/network_device.png">
+			<% end %>
+		</div>
+		<div class="col-md-4">
+			<strong><%= asset.asset_type %> <%= asset.tag_number %> (<%= asset.asset_name %>)</strong>
+			<br>
+			Location: <%= asset.location %> | Serial Number: <%= asset.serial_number %>
+		</div>
+	</div>
+<% end %>

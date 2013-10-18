@@ -59,7 +59,7 @@
 <div class="col-md-12">
 	<% if @ticket.attachments %>
 		<% @ticket.assets.each do |asset| %>
-			<%= render "assets/asset", :asset => asset %>
+			<%= render "assets/asset_tickets", :asset => asset  %>
 		<% end %>
 		<% else %>
 			No asset assigned

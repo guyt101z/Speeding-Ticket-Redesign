@@ -28,5 +28,13 @@ class Asset < ActiveRecord::Base
 	def user_email=(email)
  	 self.user = User.find_by_email(email) if email.present?
  	end
+ 	
+ 	def self.search(search)
+  	if search
+   	 Asset.joins(:user).where('assets.location LIKE ? OR tag_number LIKE ? OR asset_type LIKE ? OR asset_name LIKE ? OR model LIKE ? OR serial_number LIKE ? OR mac_address1 LIKE ? OR mac_address2 LIKE ? OR mac_address3 LIKE ? OR users.first_name LIKE ? OR users.last_name LIKE ? OR users.email LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+	 	else
+    	scoped
+		end
+	end
 	
 end

@@ -15,18 +15,7 @@
 
 <h4>Assets:</h4>
 <% @user.assets.each do |asset| %>
-	<%= link_to asset_path(asset) do %>
-		<div class="row assets">
-			<div class="col-md-2">
-						
-			</div>
-			<div class="col-md-10 asset-info">
-				<strong><%= asset.asset_type %> <%= asset.tag_number %> (<%= asset.asset_name %>)</strong>
-				<br>
-				Location: <%= asset.location %> | Serial Number: <%= asset.serial_number %>
-			</div>
-		</div>
-	<% end %>	
+	<%= render "assets/asset_tickets", :asset => asset  %>	
 <% end %>
 
 <hr class="user-hr">

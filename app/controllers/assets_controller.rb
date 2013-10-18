@@ -42,7 +42,7 @@ class AssetsController < ApplicationController
 	
 #Index Action
 	def index
-		@asset_list = Asset.all
+		@asset_list = Asset.all.search(params[:search])
 	end
 	
 #Private Actions	

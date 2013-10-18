@@ -30,4 +30,8 @@ $(function() {
     $.get($("#users_search").attr("action"), $("#users_search").serialize(), null, "script");
     return false;
   });
+  $("#assets_search input").keyup(function() {
+    $.get($("#assets_search").attr("action"), $("#assets_search").serialize(), null, "script");
+    return false;
+  });
 });
