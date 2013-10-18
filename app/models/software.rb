@@ -8,4 +8,9 @@ class Software < ActiveRecord::Base
 #Validation
 	validates_presence_of :title, :version_number, :manufacturer
 
+#Functions
+  def full_title
+		[title, version_number].join(' ')
+	end
+
 end

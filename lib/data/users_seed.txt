@@ -8,7 +8,6 @@ Greenberg|Brad|CAS 569|353-6629|bradg@msu.edu|COMM
 Holmstrom|Amanda|CAS 556|432-1286|holmstrom6@msu.edu|COMM
 Martinez|Lourdes|CAS 479|432-5508|lourdes@msu.edu|COMM
 McCornack|Steve|CAS 467|355-3478|mccornac@msu.edu|COMM
-Meng|Jingbo|CAS 481|355-3480|jingbomeng@gmail.com|COMM
 Miller|Vernon|CAS 564|355-3280|vmiller@msu.edu|COMM
 Morrison|Kelly|CAS 469|432-0203|morris15@msu.edu|COMM
 Sherry|John|CAS 551|355-6648|jsherry@msu.edu|COMM
@@ -165,7 +164,6 @@ Ashley|Nancy|CAS 340|432-1526|ashleyn@msu.edu|JRN
 Beer|Ken|CAS 304|353-6431|beerk@msu.edu|JRN
 Miller|Barb|CAS 382|432-1415|mille384@msu.edu|JRN
 Bossen|Howard|CAS 357/279|353-4613|bossen@msu.edu|JRN
-Bucqueroux|Bonnie|CAS|349-4752|sustainablefarmer@gmail.com|JRN
 Carpenter|Serena|CAS 344|432-9245|carp@msu.edu|JRN
 Carter|Sue|CAS 366|432-7461|sucarter@msu.edu|JRN
 Chavez|Manuel|CAS 385|432-1411|chavezm1@msu.edu|JRN
@@ -175,7 +173,6 @@ Fico|Fred|CAS 386|355-4489|fredfico@msu.edu|JRN
 Freedman|Eric|CAS 345|355-4729|freedma5@msu.edu|JRN
 Gould|Bob|CAS 355|353-6405|gouldro@msu.edu|JRN
 Greene|Darcy|CAS 356/265|353-7151|greened@msu.edu|JRN
-Grimm|Joe|CAS 303|353-5425|joe.grimm@gmail.com|JRN
 Gude|Karl|CAS 271|432-2485|gudek@msu.edu|JRN
 Hale|Troy|CAS 277|432-5128|halet@msu.edu|JRN
 Lacy|Steve|CAS 346|355-4625|slacy@msu.edu|JRN
@@ -208,7 +205,6 @@ Kolt|Robert|CAS 309|706-0001|kolt@msu.edu|ADPR
 Kononova|Anastasia|CAS 319|355-3858|kononova@msu.edu|ADPR
 Kronrod|Ann|CAS 324|432-8377|kronrod@msu.edu|ADPR
 Li|Hairong|CAS 368|355-1739|hairong@msu.edu|ADPR
-Lorenc|Michal|CAS 309|355-2314|michal.lorenc@gmail.com|ADPR
 McAlister|Anna|CAS 327|355-6666|annamc@msu.edu|ADPR
 Mehraban|Derek|CAS 309|355-2314|mehraban@msu.edu|ADPR
 Pysarchik|Dawn|CAS 374|353-0650|pysarchi@msu.edu|ADPR
