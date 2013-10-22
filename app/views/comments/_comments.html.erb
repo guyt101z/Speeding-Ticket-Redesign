@@ -1,5 +1,5 @@
 <div class="row">
-<% @comments.each do |comment| %>
+<% @comments.order("created_at DESC").each do |comment| %>
 	<div class="col-md-9 comment">
 		<span class="comment-by"><%= comment.technician.full_name %> - <%= comment.created_at %></span>
 		<%= simple_format comment.content %>

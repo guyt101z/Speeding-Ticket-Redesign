@@ -13,14 +13,17 @@
 
 <hr class="user-hr">
 
-<h4>Assets:</h4>
-<% @user.assets.each do |asset| %>
-	<%= render "assets/asset_tickets", :asset => asset  %>	
+<% if @user.assets.present? %>
+	<h4>Assets:</h4>
+	<% @user.assets.each do |asset| %>
+		<%= render "assets/asset_tickets", :asset => asset  %><br>	
+	<% end %>
+	
+	<hr class="user-hr">
 <% end %>
 
-<hr class="user-hr">
-
-<h4>Purchases:</h4>	
+<% if @user.purchases.present? %>	
+	<h4>Purchases:</h4>	
 	<% @user.purchases.each do |purchase| %>
 		<ul>
 			<% if purchase.item_name and purchase.software.nil? %>
@@ -31,6 +34,7 @@
 			<% end %>
 		</ul>
 	<% end %>
+<% end %>
 	
 	
 <div class="row col-md-12 back-btn">

@@ -1,38 +1,107 @@
-	<div class="asset">
-		<ul class="properties">
-			<li>Asset User: <%= @asset.user.full_name %></li>
-			<li>Asset Location: <%= @asset.location %></li>
-			<li>Asset Tag Number: <%= @asset.tag_number %></li>
-			<li>Asset Type: <%= @asset.asset_type %></li>
-			<li>Asset Name: <%= @asset.asset_name %></li>
-			<li>Model: <%= @asset.model %></li>
-			<li>Serial Number: <%= @asset.serial_number %></li>
-			<li>Manufacturer: <%= @asset.manufacturer %></li>
-			<li>Mac Address (Ethernet 1): <%= @asset.mac_address1 %></li>
-			<li>Mac Address (Ethernet 2): <%= @asset.mac_address2 %></li>
-			<li>Mac Address (Wi-Fi): <%= @asset.mac_address3 %></li>
-			<li>Description: <%= @asset.description %></li>
-			<li>Notes: <%= @asset.notes %></li>
-			<li>Other: <%= @asset.other %></li>
-			<li><%= link_to 'Edit', edit_asset_path(@asset) %></li>
-		</ul>
+<div class="row">
+	<div class="col-md-2">
+		<% if @asset.asset_type == "Apple Laptop" %>
+					<img class="img-circle border" src="/images/asset_types/medium/apple_laptop.png">
+				<% elsif @asset.asset_type == "Apple Desktop" %>
+					<img class="img-circle border" src="/images/asset_types/medium/apple_desktop.png">
+				<% elsif @asset.asset_type == "Windows Laptop" %>
+					<img class="img-circle border" src="/images/asset_types/medium/windows_laptop.png">
+				<% elsif @asset.asset_type == "Windows Desktop" %>
+					<img class="img-circle border" src="/images/asset_types/medium/windows_desktop.png">
+				<% elsif @asset.asset_type == "iPad" %>
+					<img class="img-circle border" src="/images/asset_types/medium/ipad.png">
+				<% elsif @asset.asset_type == "Windows Tablet" %>
+					<img class="img-circle border" src="/images/asset_types/medium/windows_tablet.png">
+				<% elsif @asset.asset_type == "iPod" %>
+					<img class="img-circle border" src="/images/asset_types/medium/ipod.png">
+				<% elsif @asset.asset_type == "Monitor" %>
+					<img class="img-circle border" src="/images/asset_types/medium/monitor.png">
+				<% elsif @asset.asset_type == "External HDD" %>
+					<img class="img-circle border" src="/images/asset_types/medium/external_hdd.png">
+				<% elsif @asset.asset_type == "Server" %>
+					<img class="img-circle border" src="/images/asset_types/medium/server.png">
+				<% elsif @asset.asset_type == "Linux PC" %>
+					<img class="img-circle border" src="/images/asset_types/medium/linux_pc.png">
+				<% elsif @asset.asset_type == "Apple TV" %>
+					<img class="img-circle border" src="/images/asset_types/medium/apple_tv.png">
+				<% elsif @asset.asset_type == "Camera" %>
+					<img class="img-circle border" src="/images/asset_types/medium/camera.png">
+				<% elsif @asset.asset_type == "Loud Speakers" %>
+					<img class="img-circle border" src="/images/asset_types/medium/loud_speakers.png">
+				<% elsif @asset.asset_type == "Projector" %>
+					<img class="img-circle border" src="/images/asset_types/medium/projector.png">
+				<% elsif @asset.asset_type == "Television" %>
+					<img class="img-circle border" src="/images/asset_types/medium/television.png">
+				<% elsif @asset.asset_type == "Video Equiptment" %>
+					<img class="img-circle border" src="/images/asset_types/medium/video_equiptment.png">
+				<% elsif @asset.asset_type == "Printer" %>
+					<img class="img-circle border" src="/images/asset_types/medium/printer.png">
+				<% elsif @asset.asset_type == "Network Device" %>
+					<img class="img-circle border" src="/images/asset_types/medium/network_device.png">
+				<% end %>
 	</div>
-	
-	-----
-	
-	Software:
+	<div class="col-md-10 user-info">
+		<strong><%= @asset.asset_type %> <%= @asset.tag_number %> (<%= @asset.asset_name %>)</strong> 
+		<br>
+		User: <%= @asset.user.full_name %> | Location: <%= @asset.location %>
+	</div>
+	<div class="col-md-10 col-md-offeset-2">
+	<div class="row">&nbsp;</div>
+		<blockquote>
+				<ul>
+					<li>Model: <strong><%= @asset.model %></strong></li>
+					<li>Serial Number: <strong><%= @asset.serial_number %></strong></li>
+					<li>Manufacturer: <strong><%= @asset.manufacturer %></strong></li>
+					<% if @asset.mac_address1.present? %>
+						<li>Mac Address (Wifi): <strong><%= @asset.mac_address1 %></strong></li>
+					<% end %>
+					<% if @asset.mac_address2.present? %>
+						<li>Mac Address (Ethernet 1): <strong><%= @asset.mac_address2 %></strong></li>
+					<% end %>
+					<% if @asset.mac_address3.present? %>
+						<li>Mac Address (Ethernet 2): <strong><%= @asset.mac_address3 %></strong></li>
+					<% end %>
+					<li>Description: <strong><%= @asset.description %></strong></li>
+				</ul>
+				<% if @asset.notes.present? %>
+					<strong>Notes:</strong><br>
+					<div class="well well-sm col-md-8"><%= @asset.notes %></div>
+				<% end %>
+			</blockquote>
+			<div class="row">&nbsp;</div>
+			<div class="row col-md-10"><%= link_to 'Edit Asset', edit_asset_path(@asset), :class => 'btn btn-default btn-xs' %></div>
+	</div>
+</div>
+
+<hr class="user-hr">
+
+<% if @asset.softwares.present? %>
+	<h4>Installed Software:</h4>	
+	<% @asset.softwares.each do |software| %>
 		<ul>
-		<% @asset.softwares.each do |software| %>
-			<li>
-				<%= software.title %> v<%= software.version_number %>
-			</li>
-			<% end %>
+			<li><%= software.title %> <%= software.version_number %></li>
 		</ul>
+	<% end %>
+<% end %>
 	
-	<h2>Comments</h2>
+	
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, assets_url %>
+</div>	
+	
+<div class="row col-md-12 description">Comments:</div>
+<div class="row">&nbsp;</div>
 	<%= render "comments/form" %>
+<div class="row">
+	<div class="col-md-9">&nbsp;</div>
+</div>
 	<%= render "comments/comments" %>
-	
+
+
+
+
+
+<h4>Audit Trail</h4>	
 		<% unless @asset.versions[-1].nil? or @asset.versions[-1].object.nil? %>
 		Asset Modified by <%= @asset.versions[-1].whodunnit %> on <%= @asset.versions[-1].created_at %>
 		<ul>
