@@ -97,11 +97,8 @@
 </div>
 	<%= render "comments/comments" %>
 
-
-
-
-
-<h4>Audit Trail</h4>	
+	<h4>Audit Trail</h4>
+	<ul><li>Asset Created on <%= @asset.created_at %></li></ul>	
 		<% unless @asset.versions[-1].nil? or @asset.versions[-1].object.nil? %>
 		Asset Modified by <%= @asset.versions[-1].whodunnit %> on <%= @asset.versions[-1].created_at %>
 		<ul>
