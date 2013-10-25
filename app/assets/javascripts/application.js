@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/bootstrap
-//= require jquery.ui.all
+//= require jquery.ui.autocomplete
 //= require chosen-jquery
 //= require turbolinks
 
