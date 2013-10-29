@@ -8,6 +8,9 @@ class Software < ActiveRecord::Base
 #Validation
 	validates_presence_of :title, :version_number, :manufacturer
 
+#Definitions
+	LICENSE_TYPE = ['', 'Single User', 'Volume License', 'Licence Server (Network)', 'Site Licence', 'Perpetual License', 'USB Dongle', 'Open Source']
+
 #Functions
   def full_title
 		[title, version_number].join(' ')

@@ -1,0 +1,14 @@
+<div class="list-group-item list-group-item-hover">
+	<%= link_to technician_path(technician) do %>
+		<div class="row">
+			<div class="col-md-1">
+				<%= image_tag technician.avatar.url(:thumb), :class => 'img-circle border' %>
+			</div>
+			<div class="col-md-4">
+				<strong><%= technician.full_name %></strong>
+				<br>
+				<%= technician.email %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -12,7 +12,7 @@ class TechniciansController < ApplicationController
 		@technician = Technician.new(technician_params)
 		if @technician.save
 			session[:technician_id] = @technician.id
-			redirect_to root_url, notice: "Your account has been created"
+			redirect_to @technician
 		else
 			render "new"
 		end

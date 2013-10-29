@@ -1,3 +1,25 @@
-// Place all the styles related to the softwares controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.styled-select-software select {
+  background: transparent;
+  width: 285px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+   
+.styled-select-software {
+  width: 265px;
+  height: 34px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  overflow: hidden;
+  background: url('/images/arrow.png') no-repeat right;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}

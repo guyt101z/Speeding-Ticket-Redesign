@@ -61,4 +61,8 @@
   	// show right tab on load (read hash from address bar)
 		navbox.find('a[href="'+window.location.hash+'"]').tab('show');
 	}
+	
+  setTimeout(function() {
+    window.location.reload();
+  }, 600000);
 </script>

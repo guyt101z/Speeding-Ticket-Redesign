@@ -1,0 +1,68 @@
+<%= form_for @software do |f| %>
+	<% if @software.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@software.errors.count, "error") %> prohibited this software title from being saved:</h2>
+			<ul>
+			<% @software.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+		
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :title, "Software Title" %>
+			<br>
+			<%= f.text_field :title, :class => 'form-control' %>
+		</div>
+		<div class="col-md-1">
+			<%= f.label :version_number, "Version" %>
+			<br>
+			<%= f.text_field :version_number, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :manufacturer, "Manufacturer" %>
+			<br>
+			<%= f.text_field :manufacturer, :class => 'form-control' %>
+		</div>
+	</div>
+		
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :license_number, "License Number" %>
+			<br>
+			<%= f.text_field :license_number, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :license_type, "License Type" %>
+			<div class="styled-select-software">
+				<%= f.select(:license_type, Software::LICENSE_TYPE) %>
+			</div>
+		</div>
+	</div>
+		
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.submit "Save Software Title", :class => 'btn btn-success' %>
+		</div>
+	</div>
+	
+<% end %>
+
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>

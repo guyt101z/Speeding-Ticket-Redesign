@@ -1,0 +1,78 @@
+<%= form_for @technician do |f| %>
+	<% if @technician.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@technician.errors.count, "error") %> prohibited this technician from being saved:</h2>
+			<ul>
+			<% @technician.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :first_name, "First Name" %>
+			<br>
+			<%= f.text_field :first_name, :class => 'form-control' %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :last_name, "Last Name" %>
+			<br>
+			<%= f.text_field :last_name, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :email, "Email" %>
+			<br>
+			<%= f.text_field :email, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :password, "Password" %>
+			<br>
+			<%= f.password_field :password, :class => 'form-control' %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :password_confirmation, "Confirm Password" %>
+			<br>
+			<%= f.password_field :password_confirmation, :class => 'form-control' %>
+		</div>
+	</div>
+		
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<% if @technician.avatar %>
+			<div class="col-md-1">
+				<%= image_tag @technician.avatar.url(:thumb), :class => 'img-circle border' %>
+			</div>
+		<% end %>
+		<div class="col-md-3">
+			<%= f.label :avatar, "Upload an Avatar" %>
+			<br>
+			<%= f.file_field :avatar %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.submit "Save Technician", :class => 'btn btn-success' %>
+		</div>
+	</div>
+
+<% end %>
+
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>

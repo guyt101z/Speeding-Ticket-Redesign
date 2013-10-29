@@ -1,12 +1,20 @@
-<h1>Show Technician</h1>
-
-<div class="Technician">
-	<ul class="properties">
-		<li>Name: <%= @technician.full_name %></li>
-		<li>Email: <%= @technician.email %></li>
-		<li><%= image_tag @technician.avatar.url(:medium), :class => 'img-circle' %></li>
-		<li><%= link_to 'Edit', edit_technician_path(@technician) %></li>
-	</ul>
+<div class="row">
+	<div class="col-md-2">
+		<%= image_tag @technician.avatar.url(:medium), :class => 'img-circle border' %>
+	</div>
+	<div class="col-md-10 user-info">
+		<strong><%= @technician.full_name %></strong>
+		<br>
+		<%= @technician.email %>
+		<br>
+		<% if @technician == @current_technician %>
+			<%= link_to 'Edit technician', edit_technician_path(@technician), :class => 'btn btn-default btn-xs' %>
+		<% end %>
+	</div>
 </div>
-	
-<%= link_to 'Back', root_url %>
+
+<div class="row">&nbsp;</div>
+
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, technicians_url %>
+</div>	
