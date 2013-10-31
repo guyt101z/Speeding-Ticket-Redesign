@@ -39,7 +39,7 @@ before_filter :authorize, only: [:new, :create, :show, :edit, :update, :index]
 	
 #Index Action
 	def index
-		@software_list = Software.all
+		@software_list = Software.all.search(params[:search])
 	end
 	
 #Private Actions	

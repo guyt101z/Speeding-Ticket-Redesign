@@ -1,0 +1,11 @@
+<div class="list-group-item list-group-item-hover">
+	<%= link_to software_path(software) do %>
+		<div class="row">
+			<div class="col-md-4">
+				<strong><%= software.title %> <%= software.version_number %> </strong>
+				<br>
+				<%= software.manufacturer %> | <%= software.license_type %>
+			</div>
+		</div>
+	<% end %>
+</div>

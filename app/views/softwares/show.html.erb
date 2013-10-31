@@ -1,10 +1,16 @@
-	<div class="software">
-		<ul class="details">
-			<li>Title: <%= @software.title %></li>
-			<li>Version Number: <%= @software.version_number %></li>
-			<li>Manufacturer: <%= @software.manufacturer %></li>
-			<li>License Type: <%= @software.license_type %></li>
-			<li>License Number: <%= @software.license_number %></li>
-			<li><%= link_to 'Edit', edit_software_path(@software) %></li>
-		</ul>
+<div class="row">
+	<div class="col-md-12 user-info">
+		<strong><%= @software.manufacturer %> <%= @software.title %> <%= @software.version_number %></strong>
+		<br>
+		<%= @software.license_type %><% if @software.license_number.present? %>: <%= @software.license_number %><% end %>
+		<br>
+		<%= link_to 'Edit software title', edit_software_path(@software), :class => 'btn btn-default btn-xs' %>
 	</div>
+</div>
+
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, softwares_url %>
+</div>	

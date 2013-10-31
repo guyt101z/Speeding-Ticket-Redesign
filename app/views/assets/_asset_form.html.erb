@@ -99,6 +99,8 @@
 	<div class="row col-md-4">
 		<%= f.label :software, "Installed Software" %>
 		<%= f.collection_select(:software_ids, Software.all(:order => 'title ASC'), :id, :full_title, {:selected => @asset.software_ids}, {:multiple => true}) %>
+		<br>
+		<span class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span> <%= link_to "Add a Software Title", new_software_url %></span>
 	</div>
 	
 	<div class="row">&nbsp;</div>

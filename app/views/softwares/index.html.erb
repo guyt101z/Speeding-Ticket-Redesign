@@ -1,20 +1,14 @@
 <h2> All Software Titles </h2>
 
-<%= link_to "Add a new software title", new_software_url %>
+<div class="list-group-item list-group-item-set-height">
+	<%= form_tag softwares_path, :method => 'get', :id => "softwares_search" do %>
+		<%= text_field_tag :search, params[:search], :autocomplete => 'off', :placeholder => 'Search Software...' %>
+  <div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_software_path %></div>    	
+</div>
 
-<br><br>
-
-<% @software_list.order('title ASC').each do |software| %>
-	<div class="software">
-		<ul class="details">
-			<li>Title: <%= software.title %></li>
-			<li>Version Number: <%= software.version_number %></li>
-			<li>Manufacturer: <%= software.manufacturer %></li>
-			<li>License Type: <%= software.license_type %></li>
-			<li>License Number: <%= software.license_number %></li>
-			<li><%= link_to 'Show', software_path(software) %></li>
-			<li><%= link_to 'Edit', edit_software_path(software) %></li>
-			
-		</ul>
-	</div>
+<div id="software">
+	<% @software_list.order('title ASC').each do |software| %>
+		<%= render "software", :software => software  %>
+	<% end %>
+</div>
 <% end %>

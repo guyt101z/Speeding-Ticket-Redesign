@@ -34,4 +34,9 @@ $(function() {
     $.get($("#assets_search").attr("action"), $("#assets_search").serialize(), null, "script");
     return false;
   });
+  $("#softwares_search input").keyup(function() {
+    $.get($("#softwares_search").attr("action"), $("#softwares_search").serialize(), null, "script");
+    return false;
+  });
+
 });
