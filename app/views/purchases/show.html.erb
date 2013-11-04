@@ -1,14 +1,44 @@
-	<div class="order">
-		<ul class="details">
-			<li>Asset: <%= @purchase.asset.tag_number %></li>
-			<li>Software: <%= @purchase.software.title if @purchase.software %></li>
-			<li>User: <%= @purchase.user.full_name %></li>
-			<li>Item Name: <%= @purchase.item_name %></li>
-			<li>Part Number: <%= @purchase.part_number %></li>
-			<li>Account Number: <%= @purchase.account_number %></li>
-			<li>Grant Account: <%= @purchase.grant_account %></li>
-			<li>Quantity: <%= @purchase.quantity %></li>
-			<li>Status: <%= @purchase.status %></li>
-			<li><%= link_to 'Edit', edit_purchase_path(@purchase) %></li>
-		</ul>
+<div class="row">
+	<div class="col-md-10 user-info">
+		<strong>
+			<% if @purchase.software.present? %>
+				<%= @purchase.software.title %> <%= @purchase.software.version_number %>
+			<% end %> 
+			<%= @purchase.item_name if @purchase.item_name %> 
+			<% if @purchase.part_number.present? %>
+				(<%= @purchase.part_number %>)
+			<% end %>
+		</strong>
+			 - Quantity: <%= @purchase.quantity %>
+		<br>
+		Account Number: <%= @purchase.account_number %> | Status: <%= @purchase.status %>
+		<br>
+		<%= link_to 'Edit purchase', edit_purchase_path(@purchase), :class => 'btn btn-default btn-xs' %>
 	</div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<hr class="user-hr">
+
+<div class="col-md-12">
+	<% if @purchase.assets.present? %>
+		<h4>Asset(s):</h4>
+			<% @purchase.assets.each do |asset| %>
+				<%= render "assets/asset_tickets", :asset => asset  %><br>	
+			<% end %>
+	<% end %>
+</div>
+
+<hr>
+
+<div class="col-md-12">
+	<h4>User:</h4>
+	<%= link_to user_path(@purchase.user) do %>
+		<%= render "users/user_purchases" %>
+	<% end %>
+</div>
+	
+<div class="row col-md-12 back-btn">
+	<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> back'.html_safe, purchases_url %>
+</div>

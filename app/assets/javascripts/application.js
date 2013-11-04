@@ -38,5 +38,8 @@ $(function() {
     $.get($("#softwares_search").attr("action"), $("#softwares_search").serialize(), null, "script");
     return false;
   });
-
+  $("#purchases_search input").keyup(function() {
+    $.get($("#purchases_search").attr("action"), $("#purchases_search").serialize(), null, "script");
+    return false;
+  });
 });

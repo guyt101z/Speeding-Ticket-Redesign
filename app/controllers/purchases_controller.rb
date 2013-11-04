@@ -39,13 +39,15 @@ class PurchasesController < ApplicationController
 	
 #Index Action
 	def index
-		@purchase_list = Purchase.all
+		@new = Purchase.where(:status => 'new').search(params[:search]).order("created_at DESC")
+		@open = Purchase.where(:status => 'open').search(params[:search]).order("created_at DESC")
+		@closed = Purchase.where(:status => 'closed').search(params[:search]).page(params[:page]).per_page(25).order("created_at DESC")
 	end
 	
 #Private Actions	
 private	
 	def purchase_params
-		params.require(:purchase).permit(:asset_id, :software_id, :user_id, :item_name, :part_number, :account_number, :grant_account, :quantity, :status, :invoice)
+		params.require(:purchase).permit(:software_id, :user_id, :item_name, :part_number, :account_number,{:asset_ids => []}, :quantity, :status, :invoice, :user_email)
     end
 
 end

@@ -1,23 +1,64 @@
-<h2> All Purchases </h2>
+<!-- Tabbed Navigation !-->
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#new"><span class="glyphicon glyphicon-flag"></span>&nbsp; New</span></a></li>
+  <li><a href="#open"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Open</span></a></li>
+  <li><a href="#closed"><span class="glyphicon glyphicon-folder-close"></span>&nbsp; Closed</a></li>
+</ul>
 
-<%= link_to "Add a new purchase", new_purchase_url %>
+<!-- Search Box -> Add Ticket Button !-->
+<div class="list-group-item list-group-item-set-height">
+	<%= form_tag purchases_path, :method => 'get', :id => "purchases_search" do %>
+		<%= text_field_tag :search, params[:search], :autocomplete => 'off', :placeholder => 'Search Purchases...' %>
+  <div class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign add-ticket"></span>'.html_safe, new_purchase_path %></div>    	
+</div>
 
-<br><br>
+<div class="tab-content">
+<!-- Tab Content "My Tickets" !-->
+  <div class="tab-pane active" id="new">
+	  <% @new.each do |purchase| %>
+	    <%= render "purchase", :purchase => purchase %>
+    <% end %>
+  </div>
+  
 
-<% @purchase_list.each do |purchase| %>
-	<div class="purchase">
-		<ul class="details">
-			<li>Asset: <%= purchase.asset.tag_number %></li>
-			<li>Software: <%= purchase.software.title if purchase.software %></li>
-			<li>User: <%= purchase.user.full_name %></li>
-			<li>Item Name: <%= purchase.item_name %></li>
-			<li>Part Number: <%= purchase.part_number %></li>
-			<li>Account Number: <%= purchase.account_number %></li>
-			<li>Grant Account: <%= purchase.grant_account %></li>
-			<li>Quantity: <%= purchase.quantity %></li>
-			<li>Status: <%= purchase.status %></li>
-			<li><%= link_to 'Show', purchase_path(purchase) %></li>
-			<li><%= link_to 'Edit', edit_purchase_path(purchase) %></li>
-		</ul>
-	</div>
-<% end %>
+<!-- Tab Content "Active" !-->
+  <div class="tab-pane" id="open">
+	  <% @open.each do |purchase| %>
+	    	<%= render "purchase", :purchase => purchase %>
+    <% end %>
+  </div>
+  
+<!-- Tab Content "Inactive" !-->
+  <div class="tab-pane" id="closed">
+	  <% @closed.each do |purchase| %>
+	    	<%= render "purchase", :purchase => purchase %>
+    <% end %>
+  <!-- Pagination !-->  
+  <%= will_paginate @closed %>
+  </div>
+  
+  <% end %>
+  
+</div>
+
+<!-- Javascript for persistant tabs !-->
+<script>
+	// cache the id
+	var navbox = $('#myTab');
+	// activate tab on click
+	navbox.on('click', 'a', function (e) {
+  	var $this = $(this);
+		// prevent the Default behavior
+		e.preventDefault();
+		// set the hash to the address bar
+		window.location.hash = $this.attr('href');
+		// activate the clicked tab
+		$this.tab('show');
+	})
+
+	// if we have a hash in the address bar
+	if(window.location.hash){
+  	// show right tab on load (read hash from address bar)
+		navbox.find('a[href="'+window.location.hash+'"]').tab('show');
+	}
+</script>

@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-md-1">
+		<%= image_tag @purchase.user.avatar.url(:thumb), :class => 'img-circle border' %>
+	</div>
+	<div class="col-md-4">
+		<strong><%= @purchase.user.full_name %> (<%= @purchase.user.email %>)</strong>
+		<br>
+		<%= @purchase.user.location %> | <%= @purchase.user.phone_number %> | <%= @purchase.user.department %>
+	</div>
+</div>

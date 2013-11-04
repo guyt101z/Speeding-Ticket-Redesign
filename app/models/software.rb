@@ -17,11 +17,11 @@ class Software < ActiveRecord::Base
 	end
 
 	def self.search(search)
-  if search
-    where('title LIKE ? OR manufacturer LIKE ? OR license_type LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
-  else
-    scoped
-  end
-end
+  	if search
+    	where('title LIKE ? OR manufacturer LIKE ? OR license_type LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+		else
+    	scoped
+		end
+	end
 
 end

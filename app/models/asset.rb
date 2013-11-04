@@ -2,7 +2,8 @@ class Asset < ActiveRecord::Base
 
 #Asssociations
 	belongs_to :user
-	has_many :purchases
+	has_many :purchasings
+	has_many :purchases, :through => :purchasings
 	has_many :installations
 	has_many :softwares, :through => :installations
 	has_many :attachments

@@ -1,0 +1,108 @@
+<%= form_for @purchase do |f| %>
+	<% if @purchase.errors.any? %>
+		<div id='errorExplaination'>
+			<h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+			<ul>
+			<% @purchase.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :user_email, "User email" %>
+			<br>
+			<%= f.text_field :user_email, data: {autocomplete_source: User.order(:email).map(&:email)}, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :asset_id, "Asset(s):" %>
+			<br>
+			<span class="assets-width">
+				<%= f.collection_select(:asset_ids, Asset.all(:order => 'tag_number ASC'), :id, :tag_number, {:selected => @purchase.asset_ids}, {:multiple => true}) %>
+			</span>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :software_id, "Software Title" %> <span class="example">(if applicable)<sup>*</sup></span>
+			<br>
+			<div class="styled-select-software-purchase">
+				<%= f.collection_select :software_id, Software.order('title ASC').all, :id, :title, :include_blank => ' ' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :item_name, "Item Name" %> <span class="example">(if applicable)<sup>*</sup></span>
+			<br>
+			<%= f.text_field :item_name, :class => 'form-control' %>
+		</div>
+	</div>
+		
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :part_number, "Part Number" %> <span class="example">(if applicable)<sup>*</sup></span>
+			<br>
+			<%= f.text_field :part_number, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :account_number, "Account Number" %>
+			<br>
+			<%= f.text_field :account_number, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :quantity, "Quantity" %>
+			<br>
+			<%= f.text_field :quantity, :class => 'form-control' %>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :status, "Order Status" %>
+			<br>
+			<div class="styled-select-software-purchase">
+				<%= f.select(:status, Purchase::PURCHASE_STATUS) %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">&nbsp;</div>
+		
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.submit "Save purchase", :class => 'btn btn-success' %>
+		</div>
+	</div>
+
+<% end %>
+
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>

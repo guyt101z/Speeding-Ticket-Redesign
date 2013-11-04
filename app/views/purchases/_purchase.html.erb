@@ -1,0 +1,20 @@
+<div class="list-group-item list-group-item-hover">
+	<%= link_to purchase_path(purchase) do %>
+		<div class="row">
+			<div class="col-md-12">
+				<strong><%= purchase.software.title if purchase.software %><%= purchase.item_name if purchase.item_name %></strong>
+				<br>
+				Purchased by 
+					<strong><%= purchase.user.full_name %></strong> 
+				for asset(s) 
+					<strong>
+						<% purchase.assets.each do |asset| %>
+							<%= asset.tag_number %>
+						<% end %>
+					</strong> 
+				on account 
+					<strong><%= purchase.account_number %></strong>
+			</div>
+		</div>
+	<% end %>
+</div>

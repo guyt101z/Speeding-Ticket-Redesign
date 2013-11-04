@@ -7,7 +7,6 @@ class CreatePurchases < ActiveRecord::Migration
       t.string :item_name
       t.string :part_number
       t.string :account_number
-      t.string :grant_account
       t.integer :quantity
       t.string :status
       t.attachment :invoice

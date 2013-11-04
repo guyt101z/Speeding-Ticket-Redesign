@@ -33,7 +33,7 @@
 	  <% @inactive_tickets.each do |ticket| %>
 	    	<%= render "ticket", :ticket => ticket %>
     <% end %>
-  <!-- Pagination (hidden - inifinite scroll on inactive tickets) !-->  
+  <!-- Pagination !-->  
   <%= will_paginate @inactive_tickets %>
   </div>
   
