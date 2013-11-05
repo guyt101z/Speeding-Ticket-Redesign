@@ -22,3 +22,6 @@
 
 # Ignore bundle
 /vendor
+
+# Ignore database config
+/config/database.yml
